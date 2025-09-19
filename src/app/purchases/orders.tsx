@@ -1,9 +1,7 @@
 'use client';
 import './orders.scss';
 import { useQuery } from '@tanstack/react-query';
-import { useQueryClient } from '@tanstack/react-query';
 import SteelBallRun01 from '../reusablecomponents/steelball01/ball01';
-import SteelBallRun02 from '../reusablecomponents/steelball02/ball02';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
@@ -35,7 +33,7 @@ export default function Orders(){
 
 
 
-    const {data, isLoading, error} = useQuery<queryType>({
+    const {data, isLoading} = useQuery<queryType>({
         queryKey: ["orders"],
         queryFn: async ()=> {
             const res = await fetch("/api/orders", {

@@ -1,6 +1,6 @@
 import { prisma } from "../../lib/prisma";
 import { NextResponse } from "next/server";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/app/context/auth/authOptions";
 import { getServerSession } from "next-auth";
 
 
@@ -36,7 +36,7 @@ export async function POST(params:Request) {
 
 
    //*Proceed if ok
-   const addToCart = await prisma.shoppingcart.create({data: {userid: Number(session.user.id) , productid: frontInfo.productId}})
+   //const addToCart = await prisma.shoppingcart.create({data: {userid: Number(session.user.id) , productid: frontInfo.productId}})
 
    return NextResponse.json({message: "En tu carrito"})
 

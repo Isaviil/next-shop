@@ -1,6 +1,6 @@
 'use client';
 import './modal.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import useModalContext from '@/app/context/modal/modalContext';
 import ModalLogin from '../modalStructures/modallogin/modallogin';
 import gsap from 'gsap';

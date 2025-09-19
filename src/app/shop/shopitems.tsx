@@ -21,7 +21,7 @@ export default function Shop(){
 
     const router = useRouter();
 
-    const {data, isLoading, error} = useQuery<productResponse>({
+    const {data, isLoading} = useQuery<productResponse>({
         queryKey: ["shop"],
         queryFn: async ()=>{
             const res = await fetch("/api/products", {

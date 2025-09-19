@@ -1,11 +1,11 @@
 import { prisma } from "../../lib/prisma";
 import { NextResponse } from "next/server";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/app/context/auth/authOptions";
 import { getServerSession } from "next-auth";
 
 
 
-export async function GET(params: Request){
+export async function GET(){
 
     const session = await getServerSession(authOptions);
 

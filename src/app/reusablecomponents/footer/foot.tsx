@@ -1,5 +1,4 @@
 'use client';
-import SteelBallRun01 from '../steelball01/ball01';
 import './foot.scss';
 
 export default function FooterPage(){

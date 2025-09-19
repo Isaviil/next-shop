@@ -1,9 +1,9 @@
 'use client';
 import UseTheme from '@/app/context/theme/themeContext';
 import './nav.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import gsap from 'gsap';
-import useModalContext from '@/app/context/modal/modalContext';
+//import useModalContext from '@/app/context/modal/modalContext';
 import { useSession } from 'next-auth/react';
 import IsAnimating from '@/app/context/is-animating/animatingContext';
 import { useRouter } from "next/navigation";
@@ -97,7 +97,7 @@ export default function Navbar(){
     //*Display log in modal
 
    
-    const {displayModal} = useModalContext();
+    //const {displayModal} = useModalContext();
     
 
 

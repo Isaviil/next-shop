@@ -5,14 +5,12 @@ import './modalcart.scss';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
 import { Decimal } from '@prisma/client/runtime/library';
 
 export default function ModalCarrito(){
 
     //*Retrieving the session
-    const {data: session} = useSession();
+    //const {data: session} = useSession();
 
     //*Ref for the fade of EACH product element
     const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -60,7 +58,7 @@ export default function ModalCarrito(){
 
 
     //*GET - Check if the cart is empty/ send the data to fill the cart
-    const {data, isLoading, error} = useQuery<getQueryType | null, {error: string}>({
+    const {data} = useQuery<getQueryType | null, {error: string}>({
         queryKey: ["cart"],
         queryFn: async ()=> {
             const res = await fetch("/api/cart-items", {

@@ -1,6 +1,6 @@
 'use client';
 import { useSession } from "next-auth/react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import './cartbutton.scss';
 import useModalContext from "@/app/context/modal/modalContext";
 import useCartOrderContext from "@/app/context/cart-order/cartOrderContext";

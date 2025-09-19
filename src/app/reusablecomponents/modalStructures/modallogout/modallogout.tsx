@@ -23,7 +23,7 @@ export default  function ModalLogOut(){
            })
         }
 
-    }, [modal])
+    }, [modal, displayModal])
 
     return (
         <div className="modal-logOut" ref={logoutRef}>

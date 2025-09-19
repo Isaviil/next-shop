@@ -2,7 +2,7 @@
 import { useQuery } from '@tanstack/react-query';
 import './basegame.scss';
 import CartButton from '../reusablecomponents/button-addcart/cartbutton';
-import SteelBallRun02 from '../reusablecomponents/steelball02/ball02';
+//import SteelBallRun02 from '../reusablecomponents/steelball02/ball02';
 
 
 export default function Base(){
@@ -25,7 +25,7 @@ export default function Base(){
 
 
 
-    const {data, isLoading, error} = useQuery<productResponse>({
+    const {data, isLoading} = useQuery<productResponse>({
         queryKey: ["basegame"],
         queryFn: async ()=>{
             const res = await fetch ("/api/products?category=basegame", {

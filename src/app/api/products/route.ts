@@ -1,11 +1,11 @@
 import { prisma } from "../../lib/prisma";
 import { NextResponse } from "next/server";
-import { authOptions } from "../auth/[...nextauth]/route";
-import { getServerSession } from "next-auth";
+//import { authOptions } from "@/app/context/auth/authOptions";
+//import { getServerSession } from "next-auth";
 
 export async function GET(params: Request){
 
-    const session = await getServerSession(authOptions)
+    //const session = await getServerSession(authOptions)
     
     //*Letting the backend know we want the "Category" column
 

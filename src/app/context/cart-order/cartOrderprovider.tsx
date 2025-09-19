@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import React, { ReactNode, useEffect } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { OrdersResponse, CartOrdersContextType, CartResponse } from "./cartOrderContext";
 import { cartOrderContext } from "./cartOrderContext";
 
@@ -15,7 +15,7 @@ export function CartOrderProvider({ children }: CartOrderProviderProps) {
   
   
   
-  const queryClient = useQueryClient();
+  //const queryClient = useQueryClient();
 
   const { data: session } = useSession();
 

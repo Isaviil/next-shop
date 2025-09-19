@@ -8,7 +8,6 @@ import FooterPage from "@/app/reusablecomponents/footer/foot";
 import ModalProvider from "../modal/modalProvider";
 import Showthemodal from "@/app/reusablecomponents/modal/modal";
 import IsAnimatingProv from "../is-animating/animatingProvider";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { CartOrderProvider } from "../cart-order/cartOrderprovider";
 
 

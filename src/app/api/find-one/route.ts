@@ -1,6 +1,6 @@
 import { prisma } from "../../lib/prisma";
 import { NextResponse } from "next/server";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/app/context/auth/authOptions";
 import { getServerSession } from "next-auth";
 
 

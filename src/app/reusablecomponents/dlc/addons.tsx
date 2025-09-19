@@ -26,7 +26,7 @@ export default function Addons(){
 
 
 
-    const {data, isLoading, error} = useQuery<addonsType | null>({
+    const {data, isLoading} = useQuery<addonsType | null>({
         queryKey: ["addons"],
         queryFn: async ()=>{
             const res = await fetch("/api/products?category=base&limit=6", {

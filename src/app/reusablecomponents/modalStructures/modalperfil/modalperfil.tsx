@@ -3,11 +3,11 @@ import { useSession } from 'next-auth/react';
 import './modalperfil.scss';
 import useModalContext from '@/app/context/modal/modalContext';
 import { signOut } from "next-auth/react";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
-import IsAnimating from '@/app/context/is-animating/animatingContext';
+//import IsAnimating from '@/app/context/is-animating/animatingContext';
 import { useRouter } from 'next/navigation';
-import { QueryKey, useQueryClient } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 
 
 export default function ModalPerfil(){
@@ -19,7 +19,7 @@ export default function ModalPerfil(){
     //*Retrieve the session and context
     const {data: session} = useSession();
     const {modal, displayModal} = useModalContext();
-    const {isAnimatingContext, changeisAnimating} = IsAnimating();
+    //const {isAnimatingContext, changeisAnimating} = IsAnimating();
 
     //*Ref
     const perfilRef = useRef<HTMLDivElement>(null);
