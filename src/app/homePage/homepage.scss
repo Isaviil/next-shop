@@ -97,15 +97,17 @@
     
     @include mixins.respond-to(sm){        
 
-    .details{
-       
+        .details{
+        
 
-        .gameInfoRestriction{
-           
+            .gameInfoRestriction{
+            
+            }
         }
-    }
 
-
+        .info{
+            padding-bottom: 150px;
+        }
     }    
 
 }
