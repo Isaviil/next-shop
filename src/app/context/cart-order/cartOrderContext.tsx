@@ -54,10 +54,11 @@ export type CartOrdersContextType = {
 };
 
 
-
+//tenias cartOrderContextt
 export const cartOrderContext = createContext<CartOrdersContextType | null>(null);
 
-export default function cartOrderContex(){
+//useCartOrderContext
+export default function useCartOrderContext(){
     const context = React.useContext(cartOrderContext);
     if (!context){
         throw new Error("El contexto cart y order no existe");

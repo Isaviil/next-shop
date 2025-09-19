@@ -2,7 +2,8 @@
 import { useSession } from "next-auth/react";
 import React, { ReactNode, useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { cartOrderContext, CartItem, OrdersResponse, CartOrdersContextType, CartResponse } from "./cartOrderContext";
+import { OrdersResponse, CartOrdersContextType, CartResponse } from "./cartOrderContext";
+import { cartOrderContext } from "./cartOrderContext";
 
 // Types for props
 type CartOrderProviderProps = {

@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import './cartbutton.scss';
 import useModalContext from "@/app/context/modal/modalContext";
-import cartOrderContex from "@/app/context/cart-order/cartOrderContext";
+import useCartOrderContext from "@/app/context/cart-order/cartOrderContext";
 
 
 
@@ -48,7 +48,7 @@ export default function CartButton({productId, warning, error, message}: CartBut
 
 
     //Get your object from the context
-    const { cart, orders } = cartOrderContex();
+    const { cart, orders } = useCartOrderContext();
 
     //check if it exists already
     const inCart = cart.some(item => item.id === productId);
