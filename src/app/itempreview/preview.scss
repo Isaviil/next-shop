@@ -1,0 +1,119 @@
+@use '../styles/mixins';
+@use '../styles/placeholders';
+
+
+.preview{
+    @extend %main-container;
+    padding-top: 70px;
+    gap: 50px;
+
+    &-error-msg, &-loading-msg{
+        @include mixins.sizes(90%, 800px, 1400px);
+        @include mixins.flex-prop(center, center, null);
+
+        p, h2{
+            @extend %h-lg-02;
+            text-align: center
+        }
+    }
+
+
+    &-container{
+        @include mixins.sizes(90%, 1100px, 1400px);
+        @include mixins.flex-prop(space-between, center, null);
+
+        &-text{
+            @include mixins.sizes(43%, 635px, null);
+            @include mixins.flex-prop(center, center, column);
+
+            &-game{
+                @include mixins.sizes(100%, 50%);
+            }
+
+            &-esrb{
+                @include mixins.sizes(100%, 30%);
+                @include mixins.flex-prop(center, center);
+
+                .esrb{                   
+
+                    &-text{
+                        
+                        p{
+                            color: var(--color-regular-text);
+                        }
+                    }
+                }
+            }
+            
+            &-extra{
+                @include mixins.sizes(100%, 20%, null);
+            }
+        }
+
+        &-img{
+            @include mixins.sizes(52%, 100%, null, 635px);
+            img{
+                @extend %fit-cover;
+                object-fit: contain;
+            }
+        }
+
+
+
+    @include mixins.respond-to(lg){
+        width: 100%;
+        flex-direction: column-reverse;
+        position: relative;
+        justify-content: start;
+
+                    
+                &-text{
+                    width: 90%;
+                    position: absolute;
+                    height: 500px;
+                    bottom: 0;
+
+                    &-game{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        //height: 20%;
+
+                        .game-info{
+                            width: 80%;
+                            padding: 12px 5px;
+                        }
+                    }
+
+                    &-esrb{
+                        
+                        .esrb{                   
+
+                            &-text{
+                                justify-content: center;
+                            }
+                        }
+                    }
+                    
+                    &-extra{
+                        height: auto;
+
+                        .extra-details{
+                            max-width: unset;
+                        }
+                    }
+                }
+
+                &-img{
+                    max-height: 655px;
+                    width: 90%;
+                    
+                }   
+        }
+
+
+     @include mixins.respond-to(sm){
+            height: 1050px;
+        } 
+    }    
+}

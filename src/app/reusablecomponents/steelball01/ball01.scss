@@ -1,0 +1,16 @@
+@use '../../styles/mixins';
+@use '../../styles/placeholders';
+
+
+.steelball{
+    position: absolute;
+    filter: blur(27rem);
+    border-radius: 50%;
+    z-index: -1;
+    right: 50%;
+    top: 20%;
+    width: 1000px;
+    height: 32vh;
+    transform: translate(-50%, -50%);
+    background-color: var(--steel-ball);
+}

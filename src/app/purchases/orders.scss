@@ -1,0 +1,94 @@
+@use '../styles/mixins';
+@use '../styles/placeholders';
+
+
+
+
+
+
+.orders{
+    @extend %main-container;
+    gap: 20px;
+    position: relative;
+    padding: 125px 0px;
+    min-height: 1037px;
+
+        h1{
+            @extend %h-lg-02;
+            text-align: center;
+        }
+
+        h2{
+            @extend %h-lg-02;
+            text-align: center;
+        }
+
+
+    &-container{
+        //padding: 200px 0px;        
+        @include mixins.sizes(90%, 100%, 1200px, null);
+        @include mixins.flex-prop(start, center, column, 55px);
+
+        &-data{
+            @include mixins.sizes(50%, auto);
+            @include mixins.flex-prop(center, center, column, 30px);
+
+            &-row{
+                @include mixins.sizes(100%, 100%, 670px);
+                @include mixins.flex-prop(space-evenly, center, null, 15px);
+                padding: 10px 10px;
+                background-color: var(--color-08);
+                box-shadow: 2px 1px 3px 0px var(--color-09);
+
+                &-img{
+                    @include mixins.sizes(40%, auto);
+
+                    img{    
+                        @extend %fit-cover;
+                    }
+                }
+
+                &-text{
+                    @include mixins.sizes(auto, 100%);
+                    @include mixins.flex-prop(center, center, column);
+
+                    p{
+                        @extend %p-xs-03;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @include mixins.respond-to(md) {
+
+        h1 {
+            font-size: 1.6em;
+        }
+
+        &-container {
+            overflow: unset;
+
+            &-data {
+                width: 100%;     
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                &-row {
+                    padding: 15px 5px;
+                    height: auto;
+                    flex-direction: column;
+                    width: 90%;
+                    gap: 5px;
+
+                    &-img {
+                        width: 85%;
+
+                    }
+                }
+            }
+        }
+    }
+}

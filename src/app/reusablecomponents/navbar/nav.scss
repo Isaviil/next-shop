@@ -1,0 +1,121 @@
+@use '../../styles/mixins';
+@use '../../styles/placeholders';
+
+nav{
+
+    @include mixins.sizes(100%, 10%, null, 45px);
+    @include mixins.flex-prop(space-between, center);
+    padding: 6px 15px;
+    background-color: var(--color-02);
+    position: fixed;
+    z-index: 10;
+
+    .general-data{
+        @include mixins.flex-prop(center, center, null, 15px);
+
+        h3{
+            @extend %p-sm;
+            cursor: pointer;
+        }
+
+        button{
+            background-color: var(--color-02);
+            border: none;
+            cursor: pointer;
+            .bi {
+                @include mixins.f-prop(var(--color-regular-text),1.9em);
+                background-color: var(--color-02);
+            }
+        }
+    }
+
+    .user-data{    
+        @include mixins.sizes(null, 100%, 250px);            
+        @include mixins.flex-prop(center, center, null, 10px);        
+
+        
+        &-cart{
+            position: relative;
+            cursor: pointer;
+
+            .bi-cart4{
+                @extend %h-small;
+            }
+
+            .cart-number{
+                position: absolute;
+                bottom: 10%;
+                right: 110%;
+                @extend %p-sm-01;
+                font-weight: 400;
+            }
+        }
+        
+
+        p{
+        @extend %p-sm;
+        cursor: pointer;
+        }
+
+        &-img{
+            @include mixins.sizes(auto, 100%, 90px, 100%);
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+
+            img{
+                @extend %fit-cover;
+            }
+        }
+    }
+
+    .right-side{
+       @extend %h-small;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    @include mixins.respond-to(md){
+        padding: 6px 12px;
+
+        button{
+
+            .bi{
+                font-size: 1.6em;
+            }
+        }
+
+        .user-data{    
+
+            p{
+                font-size: .77em;
+            }
+
+        }
+
+
+        .right-side{
+            font-size: .9em;
+        }
+    }
+
+
+    @include mixins.respond-to(sm){
+        height: auto;
+        flex-direction: column;
+        max-height: unset;
+
+        .user-data{
+
+            p{
+                text-align: center;
+            }
+
+            &-img{
+                display: none;
+            }
+        }
+    }
+}

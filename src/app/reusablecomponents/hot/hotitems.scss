@@ -1,0 +1,160 @@
+@use '../../styles/mixins';
+@use '../../styles//placeholders';
+
+
+.hot-container{
+    @include mixins.sizes(80%, auto, 1400px);
+    @include mixins.flex-prop(center, center, column, 30px);
+    min-width: 940px;
+    padding: 8px;
+    padding-bottom: 150px;
+    position: relative;
+
+    h2{
+        @extend %h-lg-04;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .hot{
+        @include mixins.flex-prop(space-evenly, center, null);
+        @include mixins.sizes(100%, auto);
+        background-color: var(--color-08);
+        flex-wrap: wrap;
+
+        &-element{
+            @include mixins.flex-prop(center, center, column, 8px);
+            @include mixins.sizes(40%, auto);
+            padding: 20px 0px;
+
+            &-img{
+                @include mixins.sizes(100%, 100%);
+
+                img{
+                    @extend %fit-cover;
+                }
+            }
+
+            &-text{
+                @include mixins.flex-prop(center, center, column);
+  
+                h3{
+                    @extend %h-md-03;
+                    text-align: center
+                }
+
+                p{
+                    @extend %h-small;
+                }
+            }
+
+            button{
+                @extend %button-lg-01;
+                transition: .2s ease-in-out;
+
+                &:hover{
+                    background-color: var( --color-04);
+                }
+            }
+        }
+    }
+
+
+    @include mixins.respond-to(lg){
+        min-width: unset;
+
+        h2{
+            font-size: 2.2em;
+        }
+
+        .hot{
+            flex-direction: column;
+
+            &-element{
+                width: 75%;
+                padding: 30px 0px;
+
+                &-text{
+                    
+                    h3{
+                        font-size: 1.4em;
+                    }
+
+                    p{
+                        font-size: 1.2em;
+                    }
+                }
+
+                button{
+                    padding: 12px 60px;
+                }
+            }
+        }
+    }
+
+    @include mixins.respond-to(md){
+        width: 90%;
+        gap: 10px;
+
+        h2{
+            font-size: 1.8em;
+        }
+
+        .hot{
+
+            &-element{
+                width: 85%;
+
+                &-text{
+
+                    h3{
+                        font-size: 1.2em;
+                    }
+
+                    p{
+                        font-size: 1.1em;
+                    }
+                }
+
+                button{
+                    padding: 7px 40px;
+                }
+            }
+        }
+    }
+
+
+        @include mixins.respond-to(sm){
+
+        h2{
+            font-size: 1.6em;
+        }
+
+        .hot{
+
+            &-element{
+                width: 95%;
+
+                &-text{                    
+
+                    h3{
+                        font-size: 1.1em;
+                    }
+
+                    p{
+                        font-size: 1em;
+                    }
+                }
+
+                button{
+                    white-space: nowrap;
+                    max-width: 85px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 5px 17px;
+                    font-size: .92em;    
+                }
+            }
+        }
+    }
+}

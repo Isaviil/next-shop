@@ -1,0 +1,139 @@
+@use '../../../styles/mixins';
+@use '../../../styles/placeholders';
+
+
+
+
+
+    .side-modal-showk{
+        @include mixins.sizes(100%, 100%);
+        @include mixins.flex-prop(center, center, column, 30px);
+        background-color: var(--color-02);
+
+
+        &-title{
+
+            h2{
+                @extend %h-lg-01;
+                text-align: center
+            }   
+        }
+
+        &-login{
+            @include mixins.sizes(70%, auto, 300px);
+            @include mixins.flex-prop(center, center, column, 25px);
+
+            .user, 
+            .password{                  
+                    @include mixins.sizes(100%, 100%);  
+                    @include mixins.flex-prop(start, center, column, 9px);
+                    padding-bottom: 22px;
+                    position: relative;
+
+                label{
+                     @extend %p-xs-01;
+
+                }
+
+                input{
+                    width: 100%;
+                    @extend %p-xs-01;
+                    background-color: var(--color-09);
+                    padding: 7px 10px;
+                    border-radius: 10px;
+                    font-weight: 400;
+                    border: 2px solid var(--color-07);
+                    text-align: center;
+                    
+
+                    &:focus{
+                        border-color: var(--steel-ball-02);
+                        outline: none;    
+                    }
+                }
+
+                p{
+                    position: absolute;                    
+                    bottom: 0%;
+                    @extend %p-xs-03;
+                    font-weight: 500;
+                    color: var(--color-10);   
+                    text-align: center                 
+                }
+            }
+
+            .logIn-btn{
+                @include mixins.flex-prop(center, center, null, 7px);
+
+                button{
+                    @extend %button-sm-03;
+
+                    &:hover{
+                        background-color: var(--steel-ball-02);
+                    }
+                }
+            }
+        }
+
+        &-reminder{
+            opacity: .6;            
+            padding: 5px 12px;
+            transition: opacity .25s ease-in-out;
+
+            text-align: center;
+            p{
+                @extend %p-xs-03;
+            }
+
+            &:hover{
+                opacity: .8;
+            }
+        }
+
+
+        @include mixins.respond-to(md){
+            width: 95%;
+            max-width: unset;
+
+
+                    &-title{
+
+                    h2{
+                    font-size: 1.5em;
+                    }   
+                }   
+                
+                &-login{
+
+                    .user, 
+                    .password{                  
+                        gap: 8px;
+
+                        label{
+                            font-size: .8em;
+                        }
+
+                        input{
+                            padding: 6px 8px;
+                        }
+
+                        p{                            
+                            font-size: .75em;
+                        }
+                    }
+                    
+                    .logIn-btn{
+                    
+
+                        button{
+                            padding: 6px 15px;
+                            font-size: .85em;
+                        }
+                    }
+
+                }
+            }
+          
+    }
+
+    

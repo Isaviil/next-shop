@@ -1,0 +1,147 @@
+@use '../styles/mixins';
+@use '../styles/placeholders';
+
+
+.shop{
+    @extend %main-container;
+    padding-bottom: 100px;
+
+
+    &-cargando{
+        @include mixins.sizes(100%, 1100px, 1300px, auto);
+        @include mixins.flex-prop(center, center, column, 15px);
+
+        &-img{
+            @include mixins.sizes(20%, auto, 1300px);
+
+            img{
+                @extend %fit-cover;
+            }
+        }
+
+        h2{
+            @extend %h-lg-02;
+        }
+    }
+
+    
+    &-title{
+        padding: 100px 0px;
+
+        h1{
+        @extend %h-lg-02;
+        text-align: center;
+        }
+    }
+
+
+    &-items{
+        @include mixins.sizes(100%, auto, 1300px);
+        @include mixins.flex-prop(space-evenly, center);
+        flex-wrap: wrap;
+        padding: 15px;
+        background-color: var(--color-08);
+
+        &-element{
+            @include mixins.sizes(18%, auto);
+            @include mixins.flex-prop(start, center, column, 5px);
+            padding-bottom: 25px;
+            
+
+            &-img{
+                @include mixins.sizes(100%, 100%, null, 230px);
+                cursor: pointer;
+                overflow: hidden;
+
+                img{
+                    @extend %fit-cover;
+                    max-height: 230px;
+                    transform: scale(1.03);
+                    border-color: transparent;
+                    transition: .19s ease-in-out;
+
+                    &:hover{
+                    border: solid 2px rgb(74, 137, 252);
+                    transform: scale(1);
+                    }
+                }
+            }
+
+            &-text{
+                @include mixins.flex-prop(center, center, column, 5px);
+
+                p{
+                    @extend %p-xs-01;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @include mixins.respond-to(lg){
+
+        &-items{
+
+            &-element{
+                width: 21%;
+            }
+        }
+    }
+
+
+    @include mixins.respond-to(md){
+
+    &-cargando{
+        height: 800px;
+    }
+
+
+    &-title{
+
+        h1{
+        font-size: 1.7em;
+        }
+    }
+
+        &-items{
+
+            &-element{
+                width: 26%;
+
+                &-text{
+                    font-size: .95em;
+                }
+            }
+        }
+    }
+
+    @include mixins.respond-to(sm){
+    
+
+    &-title{
+        padding-top: 100px;
+        padding-bottom: 50px;
+
+        h1{
+        font-size: 1.5em;
+        }
+    }
+
+        &-items{
+            padding: 0px;
+
+            &-element{
+                width: 42%;    
+                gap: 2px;            
+                
+                &-text{
+                    font-size: .84em;
+                }
+            }
+        }
+    }
+}
+
+
+
+

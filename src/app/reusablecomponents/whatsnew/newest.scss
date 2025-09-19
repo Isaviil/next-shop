@@ -1,0 +1,205 @@
+@use '../../styles/mixins';
+@use '../../styles/placeholders';
+
+        .whats-new{
+           padding: 8px;
+           @include mixins.sizes(100%, auto, 1400px); 
+           @include mixins.flex-prop(space-between, center, column, 30px);
+           position: relative;
+
+           h2{
+            @extend %h-lg-04;
+            font-weight: 300;
+           }
+
+           &-container{
+            background-color: var(--color-08);
+            @include mixins.sizes(100%, 80%);
+            @include mixins.flex-prop(center, center);
+
+                &-img{
+                    @include mixins.sizes(45%, 100%, 546px);
+                    img{
+                        @extend %fit-cover;
+                    }
+                }
+
+                &-text{
+                @include mixins.sizes(55%, 100%, 800px);
+                @include mixins.flex-prop(center, center, column, 20px);                
+
+                .text-title{
+                    @include mixins.flex-prop(center, center);
+
+                    h3{
+                        @extend %h-lg-04;
+                        font-weight: 300;
+                    }
+                }
+
+                .text-description{
+                    @include mixins.sizes(80%, auto);
+
+                    p{
+                        @extend %p-sm-01;
+                    }
+                }
+
+                .text-options{
+                    @include mixins.flex-prop(center, center, null, 10px);
+
+                        button, a{
+                            @extend %button-lg-01;
+                             &:hover{
+                                background-color: var(--color-04); 
+                            }
+                        }
+
+
+                    }
+                }
+           }
+
+
+           @include mixins.respond-to(xlg){
+            min-width: 970px;
+
+                &-container {
+
+                    &-text {
+
+                        .text-options {
+                            button, a {
+                                padding: 10px 45px;
+                            }
+                        }
+                    }
+                }
+           }
+
+            @include mixins.respond-to(lg){
+                
+                min-width: 720px;
+                width: 100%;
+
+                h2 {
+                    font-size: 2.1em;
+                }
+
+                &-container {
+                    height: 85%;
+
+                    &-text {
+                        .text-title {
+                            h2 {
+                                font-size: 2.1em;
+                            }
+                        }
+
+                        .text-description {
+                            p {
+                            font-size: .91em;
+                            }
+                        }
+
+                        .text-options {
+                            button, a {
+                              padding: 8px 22px;
+                              font-size: .88em;
+                            }
+                        }
+                    }
+                }
+           }
+
+           
+            @include mixins.respond-to(md){
+
+                min-width: unset;
+                height: auto;
+                width: 100%;
+                gap: 10px;
+
+                h2 {
+                   font-size: 1.8em;
+                }
+
+                &-container {
+                    flex-direction: column;
+
+                    &-img {
+                        max-width: unset;
+                        width: 100%;
+                    }
+
+                    &-text {                    
+                        width: 100%;
+                        padding: 18px 0px;
+
+                        .text-title {
+                            h2 {
+                                font-size: 1.7em;  
+                            }
+                        }
+
+                        .text-description {
+                            p {
+                                font-size: 1em;   
+                            }
+                        }
+
+                        .text-options {
+                            button, a {
+                              padding: 8px 15px;
+                              font-size: .95em;    
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            @include mixins.respond-to(sm){
+
+                h2 {
+                    font-size: 1.6em;
+                }
+
+                &-container {                    
+
+                    &-img {
+                        width: 95%;
+                    }
+
+                    &-text {
+                        width: 100%;
+
+                        .text-title {
+                            h2 {
+                                font-size: 1.6em;  
+                            }
+                        }
+
+                        .text-description {
+                            p {
+                                font-size: .92em;      
+                            }
+                        }
+
+                        .text-options {
+                            flex-direction: column;
+
+                            button, a {
+                              
+                              white-space: nowrap;
+                              max-width: 85px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              padding: 5px 11px;
+                              font-size: .9em;      
+                            }
+                        }
+                    }
+                }
+            }
+        }

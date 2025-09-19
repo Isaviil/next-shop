@@ -1,0 +1,160 @@
+@use '../../styles/mixins';
+@use '../../styles//placeholders';
+
+    .game-info{
+        @include mixins.sizes(100%, 100%);
+        @include mixins.flex-prop(space-evenly, center, column);   
+        background-color: var(--color-01);
+        padding: 19px 5px;
+        position: relative;
+
+        .title{
+
+            h1{
+                @extend %h-lg-04;
+                text-align: center
+            }
+        }
+
+        .arc{
+            
+            h2{
+                @extend %p-sm-02;
+            }
+        }
+
+        .platforms{
+            @include mixins.flex-prop(start, center, null, 10px);
+            @extend %p-xs-01;
+
+            p{
+                border: solid 1px var(--color-regular-text);
+                padding: 3px 15px;
+            }
+        }
+
+        .price{
+
+            p{
+                @extend %h-md-02;
+            }
+        }
+
+        button{
+            padding: 11px 90px;
+            background-color: var(--color-03); 
+            border-radius: 25px;
+            border: none;
+            @extend %p-sm-02;
+            cursor: pointer;
+            transition: .2s ease-in-out;
+
+            &:hover{
+            background-color: var(--color-04); 
+            }
+        }
+
+        .errorMsg{
+            position: absolute;
+            @extend %p-sm-02;
+            color: var(--color-13);
+            top: 89%;
+            text-align: center;
+        }
+
+
+        @include mixins.respond-to(lg){
+
+            .title{
+
+                h1{
+                   font-size: 1.9em; 
+                }
+            }
+
+
+            .arc{
+                
+                h2{
+                   font-size: .9em;
+                }
+            }
+
+            .platforms{
+
+
+                p{
+                    font-size: .8em;
+                }
+            }
+
+            .price{
+
+                p{
+                    font-size: 1.4em;
+                }
+            }  
+            
+            button{
+                padding: 10px 75px;
+            }
+        }
+
+        
+        @include mixins.respond-to(md){
+
+            gap: 5px;
+
+            .title{
+
+                h1{
+                    font-size: 1.7em; 
+                }
+            }
+
+
+            .arc{
+                
+                h2{
+                   font-size: .6em;
+                }
+            }
+
+            .platforms{
+
+
+                p{
+                    font-size: .68em;
+                    padding: 3px 4px;
+                }
+            }
+
+            .price{
+
+                p{
+                    font-size: 1.2em;
+                   
+                }
+            }  
+            
+            button{                
+                padding: 6px 40px;
+                font-size: .8em;
+            }
+
+            .errorMsg{
+                font-size: .75em;
+            }
+        } 
+        
+        @include mixins.respond-to(sm){
+
+            button{
+                max-width: 110px;
+                padding: 6px 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }

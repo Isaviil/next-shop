@@ -1,0 +1,111 @@
+@use '../styles/mixins';
+@use '../styles/placeholders';
+
+.mainContainer{
+    overflow: hidden;
+    @extend %main-container;
+
+    .heroContainer{
+        @include mixins.sizes(100%, 75vh);
+        max-height: 1000px;
+        min-height: 500px;
+        overflow: hidden;
+        z-index: 2;
+
+        img{
+            @extend %fit-cover;
+            min-height: 500px;
+        }
+    }
+
+    .details{
+        @include mixins.sizes(100%, auto); 
+        background-color: rgb(228, 228, 228);  
+        position: relative;   
+        z-index: 2;  
+
+        .gameInfoRestriction{
+            position: absolute;
+            bottom: 95%;
+            left: 5%;
+            @include mixins.sizes(100%, 320px, 480px)
+        }
+    }
+
+    .info{
+        @include mixins.sizes(80%, auto, 1450px);
+        @include mixins.flex-prop(center, center, column);
+        padding-bottom: 200px;
+
+    }
+
+    
+    
+
+
+    
+    @include mixins.respond-to(lg){
+            
+    .heroContainer{
+        
+        .imgContainer{
+
+            @include mixins.sizes(100%, 100%);
+
+        }
+
+    }
+
+    .details{
+       
+
+        .gameInfoRestriction{
+            max-width: 380px;
+            max-height: 280px;           
+        }
+    }
+
+    .info{
+        width: 90%;
+    }
+
+    }
+
+
+    @include mixins.respond-to(md){    
+        
+    .heroContainer{
+        height: 50vh;
+        min-height: 400px;
+    }
+
+    .details{
+
+        .gameInfoRestriction{
+            z-index: 5;
+            max-width: unset;
+            left: 0%;
+            height: auto;
+            max-height: 280px;
+            bottom: 63%;
+            padding: 4px;
+        }
+    }
+
+
+    }  
+    
+    @include mixins.respond-to(sm){        
+
+    .details{
+       
+
+        .gameInfoRestriction{
+           
+        }
+    }
+
+
+    }    
+
+}

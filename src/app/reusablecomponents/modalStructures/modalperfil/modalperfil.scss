@@ -1,0 +1,86 @@
+@use '../../../styles/mixins';
+@use '../../../styles/placeholders';
+
+.modal-perfil{
+    @include mixins.sizes(100%, 100%);
+    @include mixins.flex-prop(center, center, column, 25px);
+
+    &-usuario{
+        @include mixins.sizes(100%, auto, null);
+        @include mixins.flex-prop(center, center, column, 10px);
+
+        &-img{
+            @include mixins.sizes(30%);
+            border-radius: 50%;
+            overflow: hidden;
+
+            img{
+                @extend %fit-cover;
+            }
+        }
+
+        &-text{
+            @include mixins.flex-prop(center, center, column);
+
+            h2{
+                @extend %h-lg-02;
+            }
+
+            p{
+                @extend %p-sm;
+            }
+        }
+    }
+
+    &-options{
+        @include mixins.flex-prop(center, center, column, 14px);
+        padding: 5px 10px;
+
+        button{
+            cursor: pointer;
+            padding: 5px 18px;
+            @extend %h-small;
+            background-color: transparent;
+            border: 1px solid transparent;
+            transition: .5s ease-in-out;
+
+            &:hover{
+                color: var(--color-11);
+                border: solid 1px var(--color-regular-text);
+            }
+        }
+    }
+
+    @include mixins.respond-to(md){
+
+
+        &-usuario{
+                
+
+            &-text{
+                
+
+                h2{
+                   font-size: 1.6em;
+                }
+
+                p{
+                  font-size: .8em;
+                }
+            }
+        }
+
+        &-options{
+
+
+            button{        
+                font-size: .9em;
+                border: transparent;
+
+                &:hover{
+                    border: transparent;
+                }
+            }
+        }
+    }
+}

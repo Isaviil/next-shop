@@ -1,0 +1,65 @@
+@use '../../styles/mixins';
+@use '../../styles/placeholders';
+    
+    .esrb{
+        @include mixins.sizes(90%, 100%, 343px);
+        @include mixins.flex-prop(space-evenly, center);
+
+        &-img{
+            @include mixins.sizes(20%, 100%);
+            @extend %center;
+
+            img{
+                @extend %fit-cover;
+                object-fit: contain;
+            }
+        }
+
+        &-text{
+            @include mixins.sizes(70%, 100%);
+            @include mixins.flex-prop(center, center, column, 7px);
+
+            p{
+                @extend %p-xs-03;
+                color: black;
+            }
+        }
+
+
+        @include mixins.respond-to(md){
+            max-width: 570px;
+            justify-content: center;
+            gap: 15px;
+
+            &-img{
+                width: 20%;
+                max-width: 50px;
+
+            }
+
+            &-text{
+                width: auto;
+                justify-content: start;
+                p{
+                    font-size: .79em;
+                }
+            }
+        }
+
+
+        @include mixins.respond-to(sm){
+            max-width: unset;
+            gap: 7px;
+
+            &-img{
+               width: 30%;
+            }
+
+            &-text{
+                width: 50%;
+                p{
+                    font-size: .71em;
+                }
+            }
+        }
+    }

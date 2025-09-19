@@ -1,0 +1,44 @@
+@use '../styles/mixins';
+@use '../styles/placeholders';
+
+
+.detailsk{
+    @extend %center;
+    padding: 5px 0px;
+    gap: 10px;
+
+    .extrainfo{
+        @include mixins.sizes(auto, 100%);
+        @extend %center;
+    }
+
+    hr{
+        display: none;
+    }
+
+    .esrbc{
+        @extend %center;
+        @include mixins.sizes(auto, 100%);
+    }
+
+
+
+    @include mixins.respond-to(md){
+        flex-direction: column;
+
+        .extrainfo{
+            height: auto;
+            width: 100%;
+        }
+        
+        hr{
+            display: inline;
+            width: 80%;
+        }
+
+        .esrbc{
+            height: auto;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,199 @@
+@use '../../../styles/mixins';
+@use '../../../styles/placeholders';
+
+
+.modal-cart{
+    @include mixins.sizes(100%, 100%);
+    @include mixins.flex-prop(start, center, column, 20px);
+    padding: 13px 12px;
+
+    &-successful{
+        @include mixins.sizes(100%, 100%);
+        @include mixins.flex-prop(center, center, column, 20px);
+
+        h1{
+            @extend %h-lg-01;
+            text-align: center
+        }
+
+        .btnsuccess{
+            @extend %button-sm-03;
+            background-color: var(--steel-ball-02);
+        }
+    }
+
+    &-description{
+        @include mixins.sizes(100%, auto);
+        @include mixins.flex-prop(start, center, column, 10px);
+        padding: 6px 6px;
+
+        h1{
+            @extend %h-md-02;
+            text-align: center
+        }
+
+        &-price{
+            @include mixins.sizes(100%, auto);
+            @include mixins.flex-prop(center, center, column, 7px);
+
+            &-element{
+                @include mixins.sizes(100%, auto);
+                @include mixins.flex-prop(space-between, center);
+
+                p{
+                    @extend %p-sm;
+                }               
+            }
+
+            &-buttons{
+                @include mixins.sizes(100%, auto);
+                @include mixins.flex-prop(center, center, null, 15px);
+
+                
+                button{
+                    @extend %p-xs-01;
+                    cursor: pointer;
+                    background-color: var(--color-03);
+                    border: none;
+                    border-radius: 15px;
+                    padding: 7px 20px;
+                }
+            }
+        }
+    }
+
+    &-products{
+        @include mixins.sizes(100%, 100%);
+        @include mixins.flex-prop(start, center, column, 10px);
+        padding: 6px 6px;
+        overflow-y: auto; 
+
+        p{
+            @extend %h-md-03;
+            text-align: center
+        }
+
+        h2{
+            @extend %h-md-02;
+            text-align: center
+        }
+
+        &-summary{
+            @include mixins.sizes(100%, 100%);
+            @include mixins.flex-prop(null, center, column, 60px);
+            //opacity: 0;
+
+            &-element{
+                @include mixins.flex-prop(center, center, column);
+                background-color: var(--color-08);
+                padding: 4px 5px;
+                
+
+                &-img{
+                    @include mixins.sizes(75%, 75%);
+
+                    img{
+                        @extend %fit-cover;
+                    }
+                    
+                }
+
+                &-text{
+                    @include mixins.sizes(75%, 75%);
+                    @include mixins.flex-prop(center, center, column, 7px);
+
+                    h3{
+                        @extend %h-md-03;
+                        text-align: center
+                    }
+
+                    p{
+                        @extend %p-sm-01;
+                    }
+
+                    .esrb-fit{
+                        @include mixins.sizes(70%, auto);
+
+                        p{
+                            color: var( --color-regular-text);
+                            font-size: .7em;
+                        }
+                    }
+
+                    .bi-trash-fill{
+                        cursor: pointer;
+                        color: var(--color-12);
+                        font-size: 3em;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @include mixins.respond-to(md){
+
+
+        &-description{
+            padding: 3px 3px;
+
+            h1{
+                font-size: 1.35em;
+            }
+
+            &-price{
+
+                &-element{
+
+                    p{
+                        font-size: .85em;
+                    }
+                }
+
+                &-buttons{
+                    gap: 7px;
+
+                    button{
+                       padding: 5px 13px; 
+                    }
+                }
+            }
+        }
+
+        &-products{
+
+            h2{
+                font-size: 1.35em;
+            }
+
+            &-summary{
+
+
+                &-element{
+
+
+                    &-img{
+                        width: 85%;
+                    }
+
+                    &-text{
+                        width: 85%;
+
+
+                        p{
+                            font-size: 1.1em;
+                        }
+
+                        .esrb-fit{
+                            width: 85%;
+                        }
+
+                        .bi-trash-fill{
+                            font-size: 2.8em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

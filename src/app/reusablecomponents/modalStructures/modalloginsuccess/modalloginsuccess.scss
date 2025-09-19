@@ -1,0 +1,30 @@
+@use '../../../styles/mixins';
+@use '../../../styles/placeholders';
+
+.side-modal-showb{
+    @extend %main-container;
+    height: 100%;
+
+    p{
+        @extend %h-md-02;
+        opacity: 0;
+    }
+
+    h1{
+        @extend %h-lg-03;
+        opacity: 0;
+    }
+
+    @include mixins.respond-to(md){
+
+        p{
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        h1{
+            font-size: 1.6em;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,179 @@
+@use '../../styles/placeholders';
+@use '../../styles/mixins';
+
+.addons-container{
+    @include mixins.sizes(90%, null, 1600px);
+    @include mixins.flex-prop(center, center, column, 30px);
+    min-width: 1420px;
+    padding: 8px;
+    padding-bottom: 150px;
+
+    h2{
+        @extend %h-lg-04;
+        text-align: center;
+    }
+
+    .addons{
+        @include mixins.sizes(100%, auto);
+        @include mixins.flex-prop(space-evenly, center);
+        background-color: var(--color-08);
+        padding: 7px;
+
+        &-element{           
+           @include mixins.sizes(16%, 100%);
+           @include mixins.flex-prop(center, center, column, 10px);
+           text-align: center;
+            
+            &-img{
+                @include mixins.sizes(100%, 250px);
+                overflow: hidden;
+                border-radius: 15px;       
+                cursor: pointer;          
+
+                img{
+                    @extend %fit-cover;
+                    transform: scale(1.04);
+                    transition: .2s ease-in-out;
+
+                    &:hover{
+                        transform: scale(1);
+                        border: solid 2px rgb(74, 137, 252);
+                    }
+                }
+            }
+
+            &-text{
+                @include mixins.flex-prop(center, center, column);
+
+                p{
+                    @extend %p-xs-01;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    button{
+        @extend %button-md-02;
+        font-weight: 600;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+        
+
+        &:hover{
+            background-color: var(--color-07);
+        }
+    }
+
+
+
+    @include mixins.respond-to(xlg){
+        min-width: 1000px;
+
+        h2{
+
+        }
+
+        .addons{
+            overflow: hidden;
+            flex-wrap: wrap;
+
+            &-element{
+                width: 22%;
+
+                &-img{
+                    height: 240px;
+                    
+                    img{
+                        object-fit: contain;
+                    }
+                }
+
+                &-text{
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+
+
+    @include mixins.respond-to(lg){
+        min-width: unset;
+        width: 95%;
+
+        h2{
+            font-size: 2.2em;
+        }
+
+        .addons{
+
+            &-element{
+                width: 30%;                
+
+                &-img{
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    @include mixins.respond-to(md){
+
+        h2{
+            font-size: 1.8em;
+        }
+
+        .addons{
+            max-width: 540px;
+
+            &-element{
+                width: 45%;
+
+                &-img{                    
+                    height: auto;
+
+                }
+
+                &-text{
+
+                    p{
+                        font-size: .8em;
+                    }
+                }
+            }
+        }
+
+            button{
+                font-size: .9em;
+                padding: 11px 35px;
+            }
+    }
+
+
+    @include mixins.respond-to(sm){
+
+        h2{
+            font-size: 1.6em;
+        }
+
+        .addons{           
+
+            &-element{
+                
+
+                &-text{
+
+                    p{
+                        font-size: .75em;
+                    }
+                }
+            }
+        }
+
+        button{
+            font-size: .85em;
+            padding: 11px 30px;
+        }
+    }
+
+}

@@ -1,0 +1,126 @@
+@use '../styles/mixins';
+@use '../styles/placeholders';
+
+
+.base {
+    @include mixins.sizes(80%, auto, 700px); 
+    @include mixins.flex-prop(center, center, column, 30px);
+    padding: 200px 8px;
+
+    h2{
+        @extend %h-lg-04;
+        font-weight: 300;
+        text-align: center
+    }
+
+    &-container{
+        position: relative;
+        @include mixins.sizes(100%, auto);
+        @include mixins.flex-prop(center, center, column, 30px);
+
+        &-img{
+            @include mixins.sizes(100%, auto); 
+
+            img{
+                @extend %fit-cover;
+            }
+        }
+
+        &-text{
+            @include mixins.sizes(90%, auto);
+            @include mixins.flex-prop(center, center, column, 30px);
+
+
+            &-description{
+
+                p{
+                    @extend %p-sm-01;
+                    text-align: center;
+                }
+            }
+
+            &-options{
+                @include mixins.flex-prop(center, center, null, 30px);
+
+                .btn, a{
+                    @extend %button-lg-01;
+                }
+            }
+        }
+    }
+
+
+
+    @include mixins.respond-to(lg){
+
+        h2{
+            font-size: 2.1em;
+        }
+
+    }
+
+
+    @include mixins.respond-to(md){
+        width: 90%;
+        gap: 10px;
+        
+        h2{
+            font-size: 1.8em;
+        }
+
+        &-container{
+            width: 100%;
+
+            &-text{
+
+                &-description{
+
+                    p{
+                        font-size: .92em;
+                    }
+                }
+
+                &-options{
+                    gap: 10px;
+
+                    .btn, a{
+                        padding: 8px 15px;
+                        font-size: .95em;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @include mixins.respond-to(sm){
+
+
+        &-container{
+
+            &-text{
+
+                &-description{
+
+                    p{
+                        font-size: .92em;
+                    }
+                }
+
+                &-options{
+                   flex-direction: column;
+
+                    .btn, a{
+                              white-space: nowrap;
+                              max-width: 85px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              padding: 5px 11px;
+                              font-size: .9em;    
+                    }
+                }
+            }
+        }
+    }
+
+}
