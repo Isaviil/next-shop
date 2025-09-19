@@ -1,6 +1,6 @@
 import WhatsNew from "./newest";
 
-export default function Page(){
+export default async function Page(){
     return (
         <WhatsNew/>
     )

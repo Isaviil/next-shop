@@ -1,6 +1,6 @@
 import ModalLogOut from "./modallogout";
 
-export default function Page(){
+export default async function Page(){
     return (
         <ModalLogOut/>
     )

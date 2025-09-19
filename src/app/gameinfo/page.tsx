@@ -1,6 +1,6 @@
 import Details from "./details";
 
-export default function Page(){
+export default async function Page(){
 
     return(
         <Details/>

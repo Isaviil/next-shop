@@ -1,7 +1,7 @@
 import GameInfo from "./gameinf";
 
 
-export default function Page(){
+export default async function Page(){
 
 
     return (

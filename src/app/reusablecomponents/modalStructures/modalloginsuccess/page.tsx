@@ -1,6 +1,6 @@
 import ModalSuccess from "./modalloginsuccess";
 
-export default function Page(){
+export default async function Page(){
     return (
         <ModalSuccess/>
     )

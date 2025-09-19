@@ -1,6 +1,6 @@
 import ModalCarrito from "./modalcart";
 
-export default function Page(){
+export default async function Page(){
     return (
         <ModalCarrito/>
     )

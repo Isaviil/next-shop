@@ -1,6 +1,6 @@
 import Hotnow from "./hotitems";
 
 
-export default function Page(){
+export default async function Page(){
     return <Hotnow/>;
 }
