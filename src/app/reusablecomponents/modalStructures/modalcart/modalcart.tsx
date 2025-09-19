@@ -1,5 +1,5 @@
 'use client';
-import ShowModal from '@/app/context/modal/modalContext';
+import useModalContext from '@/app/context/modal/modalContext';
 import ESRB from '../../esrb/rate';
 import './modalcart.scss';
 import { useRef, useEffect } from 'react';
@@ -36,7 +36,7 @@ export default function ModalCarrito(){
 
 
     //Getting the context + provider for the modals
-    const {modal, displayModal} = ShowModal();
+    const {modal, displayModal} = useModalContext();
 
 
 

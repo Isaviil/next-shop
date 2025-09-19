@@ -1,5 +1,5 @@
 'use client';
-import ShowModal from "@/app/context/modal/modalContext";
+import useModalContext from "@/app/context/modal/modalContext";
 import "./modallogout.scss";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 export default  function ModalLogOut(){
 
     const logoutRef = useRef<HTMLDivElement>(null)
-    const {modal, displayModal} = ShowModal();
+    const {modal, displayModal} = useModalContext();
 
     useEffect(()=>{
 

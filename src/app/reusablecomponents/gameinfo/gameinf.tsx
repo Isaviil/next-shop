@@ -1,7 +1,7 @@
 'use client';
 import './gameinf.scss';
 import { useSession } from 'next-auth/react';
-import ShowModal from '@/app/context/modal/modalContext';
+import useModalContext from '@/app/context/modal/modalContext';
 import { useQueryClient } from '@tanstack/react-query';
 import CartButton from '../button-addcart/cartbutton';
 
@@ -25,7 +25,7 @@ export default function GameInfo({products} : GameInfoProps){
     const {data: session} = useSession();
 
     //*Retrieving the modal state
-    const {modal, displayModal} = ShowModal();
+    const {modal, displayModal} = useModalContext();
     
 
     return (

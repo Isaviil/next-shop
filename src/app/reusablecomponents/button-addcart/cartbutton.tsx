@@ -2,7 +2,7 @@
 import { useSession } from "next-auth/react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import './cartbutton.scss';
-import ShowModal from "@/app/context/modal/modalContext";
+import useModalContext from "@/app/context/modal/modalContext";
 import cartOrderContex from "@/app/context/cart-order/cartOrderContext";
 
 
@@ -25,7 +25,7 @@ export default function CartButton({productId, warning, error, message}: CartBut
     
     const {data: session} = useSession();
 
-    const {modal, displayModal} = ShowModal();
+    const {modal, displayModal} = useModalContext();
 
     const muta = useMutation<void, void, {productId: number}>({
 

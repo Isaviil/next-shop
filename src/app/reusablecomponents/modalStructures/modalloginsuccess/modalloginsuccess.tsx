@@ -1,5 +1,5 @@
 'use client';
-import ShowModal from '@/app/context/modal/modalContext';
+import useModalContext from '@/app/context/modal/modalContext';
 import './modalloginsuccess.scss';
 import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
@@ -13,7 +13,7 @@ export default function ModalSuccess(){
     const msgRef = useRef<HTMLDivElement>(null);
 
     //*Getting the context
-    const {modal, displayModal} = ShowModal();
+    const {modal, displayModal} = useModalContext();
 
     //*Getting the session
     const {data: session} = useSession()

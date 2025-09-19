@@ -1,7 +1,7 @@
 'use client';
 import { useSession } from 'next-auth/react';
 import './modalperfil.scss';
-import ShowModal from '@/app/context/modal/modalContext';
+import useModalContext from '@/app/context/modal/modalContext';
 import { signOut } from "next-auth/react";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -18,7 +18,7 @@ export default function ModalPerfil(){
 
     //*Retrieve the session and context
     const {data: session} = useSession();
-    const {modal, displayModal} = ShowModal();
+    const {modal, displayModal} = useModalContext();
     const {isAnimatingContext, changeisAnimating} = IsAnimating();
 
     //*Ref

@@ -12,11 +12,11 @@ interface contextType {
 
 export const modalContext = createContext<contextType | null>(null);
 
-export default function ShowModal(){
+export default function useModalContext(){
 
-    const useContext = React.useContext(modalContext);
-    if (!useContext){
+    const context = React.useContext(modalContext);
+    if (!context){
         throw new Error("No hay un contexto para usar")
     }
-    return useContext;
+    return context;
 }

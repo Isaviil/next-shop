@@ -3,7 +3,7 @@ import UseTheme from '@/app/context/theme/themeContext';
 import './nav.scss';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import ShowModal from '@/app/context/modal/modalContext';
+import useModalContext from '@/app/context/modal/modalContext';
 import { useSession } from 'next-auth/react';
 import IsAnimating from '@/app/context/is-animating/animatingContext';
 import { useRouter } from "next/navigation";
@@ -19,7 +19,7 @@ export default function Navbar(){
 
 
     //*display modal context
-    const {isAnimatingContext, changeisAnimating} = IsAnimating();
+    const {changeisAnimating} = IsAnimating();
 
     
 
@@ -46,7 +46,7 @@ export default function Navbar(){
 
 
     //*GET - Check if the cart is empty/ send the data to fill the cart
-    const {data, isLoading, error} = useQuery<getQueryType | null, {error: string}>({
+    const {data} = useQuery<getQueryType | null, {error: string}>({
         queryKey: ["cart"],
         queryFn: async ()=> {
             const res = await fetch("/api/cart-items", {
@@ -97,7 +97,7 @@ export default function Navbar(){
     //*Display log in modal
 
    
-    const {displayModal} = ShowModal();
+    const {displayModal} = useModalContext();
     
 
 

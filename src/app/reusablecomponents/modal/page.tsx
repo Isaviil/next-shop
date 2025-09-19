@@ -1,8 +1,8 @@
-import ShowModal from "./modal";
+import useModalContext from "./modal";
 
 
 export default function Page(){
     return (
-        <ShowModal/>
+        <useModalContext/>
     )
 }

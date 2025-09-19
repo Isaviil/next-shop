@@ -1,6 +1,6 @@
 'use client';
 import './modallogin.scss';
-import ShowModal from '@/app/context/modal/modalContext';
+import useModalContext from '@/app/context/modal/modalContext';
 import gsap from 'gsap';
 import { signIn } from 'next-auth/react';
 import { useRef, useState } from 'react';
@@ -11,8 +11,8 @@ export default function ModalLogin(){
 
     const sideModalToHide = useRef<HTMLDivElement>(null)
 
-    //*ShowModal is the customhook, remember that
-    const {modal, displayModal} = ShowModal();
+    //*useModalContext is the customhook, remember that
+    const {modal, displayModal} = useModalContext();
 
 
     //*Const to prevent the user from closing on sending the info

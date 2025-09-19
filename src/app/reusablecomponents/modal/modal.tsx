@@ -1,7 +1,7 @@
 'use client';
 import './modal.scss';
 import { useEffect, useRef, useState } from 'react';
-import ShowModal from '@/app/context/modal/modalContext';
+import useModalContext from '@/app/context/modal/modalContext';
 import ModalLogin from '../modalStructures/modallogin/modallogin';
 import gsap from 'gsap';
 import ModalSuccess from '../modalStructures/modalloginsuccess/modalloginsuccess';
@@ -13,8 +13,8 @@ import ModalCarrito from '../modalStructures/modalcart/modalcart';
 
 export default function Showthemodal(){
 
-    //*ShowModal is the customhook, remember that
-    const {modal, displayModal} = ShowModal();
+    //*useModalContext is the customhook, remember that
+    const {modal, displayModal} = useModalContext();
     const {isAnimatingContext, changeisAnimating} = IsAnimating();
     
     const sideModal = useRef<HTMLDivElement>(null)
