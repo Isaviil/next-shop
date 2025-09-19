@@ -1,3 +1,4 @@
+'use client';
 import './rate.scss';
 
 export default function ESRB(){

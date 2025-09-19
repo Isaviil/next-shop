@@ -1,3 +1,4 @@
+'use client';
 import './ball02.scss';
 
 export default function SteelBallRun02(){

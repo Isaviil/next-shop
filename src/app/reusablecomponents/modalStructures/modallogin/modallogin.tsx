@@ -1,3 +1,4 @@
+'use client';
 import './modallogin.scss';
 import ShowModal from '@/app/context/modal/modalContext';
 import gsap from 'gsap';

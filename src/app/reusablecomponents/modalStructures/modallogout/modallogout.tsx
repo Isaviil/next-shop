@@ -1,3 +1,4 @@
+'use client';
 import ShowModal from "@/app/context/modal/modalContext";
 import "./modallogout.scss";
 import gsap from "gsap";

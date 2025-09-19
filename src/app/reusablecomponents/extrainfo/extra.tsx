@@ -1,3 +1,4 @@
+'use client';
 import './extra.scss';
 
 export default function ExtraInfo(){

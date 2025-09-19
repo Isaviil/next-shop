@@ -1,3 +1,4 @@
+'use client';
 import './details.scss';
 import ESRB from '../reusablecomponents/esrb/rate';
 import ExtraInfo from '../reusablecomponents/extrainfo/extra';

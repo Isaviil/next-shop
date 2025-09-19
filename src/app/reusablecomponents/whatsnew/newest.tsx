@@ -1,3 +1,4 @@
+'use client';
 import './newest.scss';
 import SteelBallRun01 from '../steelball01/ball01';
 import { useRouter } from 'next/navigation';
