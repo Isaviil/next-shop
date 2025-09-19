@@ -70,7 +70,7 @@ export default function ModalLogin(){
         
         if (result?.ok){                         
 
-            let tl = gsap.timeline()
+            const tl = gsap.timeline()
                 if (modal){
                     tl.fromTo(sideModalToHide.current, 
                     { opacity: 1}, 

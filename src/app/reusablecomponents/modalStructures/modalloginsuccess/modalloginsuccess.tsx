@@ -22,7 +22,7 @@ export default function ModalSuccess(){
     useEffect(()=>{
 
         if (modal === "loginsuccess" && sideModalToHide){
-            let tl = gsap.timeline();
+            const tl = gsap.timeline();
                 tl.fromTo(welcomeRef.current, {opacity: 0}, {opacity: 1, duration: .5, ease: "power2.out"})
                 .fromTo(nameRef.current, {opacity: 0}, {opacity: 1, duration: .5, ease: "power2.out"})
                 .fromTo(msgRef.current, {opacity: 0}, {opacity: 1, duration: .5, ease: "power2.out", 

@@ -83,7 +83,7 @@ export default function ModalCarrito(){
 
     //*DELETE ELEMENT FROM CART
     const mutaDelete = useMutation<
-    {deleteMessage: string}, {error: string}, {productId: Number}, {previousCart?: getQueryType }>({
+    {deleteMessage: string}, {error: string}, {productId: number}, {previousCart?: getQueryType }>({
         mutationFn: async (toSend)=>{
             const res = await fetch("/api/cart-items", {
                 method: "DELETE",
@@ -173,7 +173,7 @@ export default function ModalCarrito(){
         if (isAnimating.current) return;
         isAnimating.current = true;
 
-        let tl = gsap.timeline();
+        const tl = gsap.timeline();
         tl.fromTo(carritoRef.current, {opacity: 1}, {opacity: 1, duration: .7, ease: "power3.out", 
             onComplete: () => {
             isAnimating.current = false;
@@ -230,7 +230,7 @@ export default function ModalCarrito(){
                         }
                         isAnimating.current = true;
 
-                        let tl = gsap.timeline()
+                        const tl = gsap.timeline()
 
                         tl.fromTo(carritoRef.current, {opacity: 1}, {opacity: 0, duration: .5, ease: "power3.out", onComplete: ()=> {
                             isAnimating.current = false;

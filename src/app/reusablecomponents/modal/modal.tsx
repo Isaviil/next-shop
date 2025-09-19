@@ -34,7 +34,7 @@ export default function Showthemodal(){
 
         isAnimating.current = true;
 
-            let tl = gsap.timeline();
+            const tl = gsap.timeline();
               
             tl.fromTo(sideModal.current, {xPercent: 0}, {xPercent: 100, duration: .4, ease: "power2.out"})
             .fromTo(sideModalParent.current, {opacity: 1}, {opacity: 0, duration: .4, ease: "power2.out", zIndex: -1, 
@@ -78,7 +78,7 @@ export default function Showthemodal(){
 
         if (!isAnimatingContext) return;        
 
-        let tl = gsap.timeline();
+        const tl = gsap.timeline();
 
         if (modal === "partialhide"){
             //de 0 a 100 se oculta
@@ -125,7 +125,7 @@ export default function Showthemodal(){
             document.body.style.overflow = "";
         }
 
-        let tl = gsap.timeline();
+        const tl = gsap.timeline();
 
         if (modal === "login"){
 
@@ -149,7 +149,7 @@ export default function Showthemodal(){
     //*Showing the cart modal when we need the "carrito"
     useEffect(()=>{
 
-        let tl = gsap.timeline();
+        const tl = gsap.timeline();
 
         if (modal === "cart"){
 
@@ -174,13 +174,13 @@ export default function Showthemodal(){
 
 
 
-    //*Toggle the modal when clicking on the profile
+    //*Toggle the modal when clicking on the profiles
 
     useEffect(()=>{
 
         if (modal === "profile"){
 
-            let tl = gsap.timeline();
+            const tl = gsap.timeline();
 
             if (isAnimating.current){
             return;
