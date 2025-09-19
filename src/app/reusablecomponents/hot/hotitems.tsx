@@ -24,7 +24,7 @@ export default function Hotnow(){
     };
 
     
-    const {data, isLoading, error} = useQuery<queryType | null>({
+    const {data, isLoading} = useQuery<queryType | null>({
         queryKey: ["hot"],
         queryFn: async ()=> {
             const res = await fetch("/api/products?category=hot", {

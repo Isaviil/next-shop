@@ -1,4 +1,4 @@
-import NextAuth, { User } from "next-auth";
+import NextAuth, { NextAuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { prisma } from "../../../lib/prisma";
 import { JWT } from "next-auth/jwt";
@@ -12,7 +12,7 @@ interface MySessionUser {
 }
 
 
-export const authOptions = {
+const authOptions: NextAuthOptions = {
 
     providers: [
         CredentialsProvider({

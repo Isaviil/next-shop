@@ -9,8 +9,6 @@ import gsap from 'gsap';
 
 export default function WhatsNew(){
 
-    //Redirecting with router
-    const router = useRouter();
 
     type newestType = {
         products: {
@@ -25,7 +23,7 @@ export default function WhatsNew(){
     }
 
 
-    const {data, isLoading, error} = useQuery<newestType | null>({
+    const {data, isLoading} = useQuery<newestType | null>({
         queryKey: ["newest"],
         queryFn: async ()=>{
             const res = await fetch("/api/products?category=newest", {
