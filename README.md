@@ -9,9 +9,9 @@
   </p>
 
   <ul align="left">
-    <li>* <b>Frontend:</b> Programado con <b>React.js</b>, <b>TypeScript</b>, <b>Next.js</b> y <b>SCSS</b>.</li>
-    <li>* <b>Backend:</b> Gestión de compras y carrito directamente en <b>base de datos</b> (no localStorage).</li>
-    <li>* <b>UI/UX:</b> Interfaz <b>responsiva y optimizada</b> para distintos dispositivos y pantallas.</li>
+    <li> <b>Frontend:</b> Programado con <b>React.js</b>, <b>TypeScript</b>, <b>Next.js</b> y <b>SCSS</b>.</li>
+    <li> <b>Backend:</b> Gestión de compras y carrito directamente en <b>base de datos</b> (no localStorage).</li>
+    <li> <b>UI/UX:</b> Interfaz <b>responsiva y optimizada</b> para distintos dispositivos y pantallas.</li>
   </ul>
 
 </div>
