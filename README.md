@@ -5,7 +5,7 @@
   <h2>Strive: Tienda de contenido digital (DLCs) 🎮</h2>
 
   <p>
-    Strive es una tienda online de contenido adicional descargable inspirada en Guilty Gear Strive.
+    Tienda online de contenido adicional descargable inspirada en Guilty Gear Strive.
   </p>
 
   <ul align="left">
