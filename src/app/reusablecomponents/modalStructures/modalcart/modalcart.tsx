@@ -159,6 +159,7 @@ export default function ModalCarrito(){
         },
         onSuccess: ()=>{
             queryClient.invalidateQueries({queryKey: ["cart"]})
+            queryClient.invalidateQueries({queryKey: ["orders"]})  
         }
     });
 

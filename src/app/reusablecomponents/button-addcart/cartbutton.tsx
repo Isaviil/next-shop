@@ -42,7 +42,8 @@ export default function CartButton({productId, warning, error, message}: CartBut
       }, onSuccess: ()=>{
           //console.log(muta.data)
           queryClient.invalidateQueries({queryKey: ["cart"]})
-          queryClient.invalidateQueries({queryKey: ["product"]})   
+          queryClient.invalidateQueries({queryKey: ["product"]})
+          queryClient.invalidateQueries({queryKey: ["orders"]})     
       }
     });
 
