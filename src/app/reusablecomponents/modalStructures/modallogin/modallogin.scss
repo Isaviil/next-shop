@@ -76,17 +76,19 @@
         }
 
         &-reminder{
-            opacity: .6;            
+            opacity: .8;            
             padding: 5px 12px;
             transition: opacity .25s ease-in-out;
+            font-weight: 400;
 
             text-align: center;
             p{
-                @extend %p-xs-03;
+                @extend %p-xs-01;
             }
 
             &:hover{
-                opacity: .8;
+                opacity: 1;
+                font-weight: 500;
             }
         }
 
