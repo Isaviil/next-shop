@@ -14,6 +14,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+/*Play*/
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+
 
 *{
     margin: 0;
@@ -50,12 +54,15 @@ body{
     --color-12: #e5e6e7da; 
     --color-13: #ff8f72;
     --color-14: rgb(217 217 217 / 39%);
+    --color-15: #aa9fbd6e;
+    --color-16: #ebeaecec;
+    --color-17: #fffb11;
 
 
     --footer-color-01: #0d0f11e7; //Footer
     --color-full-white: white;
     --steel-ball: rgb(134, 29, 99);
-    --steel-ball-02: rgb(68, 119, 212); 
+    --steel-ball-02: rgb(26, 75, 167); 
 
 }
 
@@ -76,8 +83,12 @@ body[data-theme= "light"]{
     --color-12: #fac42fe5; 
     --color-13: #cf3014;
     --color-14: #d6e7fc7c;
+    --color-15: #d3d887d7;
+    --color-16: #f1f1f1d2;
+    --color-17: #435811;
+    // --color-15: #949674d7;
 
     --footer-color-01: #d6e7fc73;
     --steel-ball: #facf59;
-    --steel-ball-02: #fd7844; 
+    --steel-ball-02: rgba(229, 241, 58, 0.843); 
 } 

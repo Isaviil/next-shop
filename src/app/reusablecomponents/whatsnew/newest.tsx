@@ -74,7 +74,7 @@ export default function WhatsNew(){
                 
                         <div className="whats-new-container-text">
                             <div className="text-title">
-                                <h3>{data?.products[0].name}</h3>
+                                <h3>{data?.products[0].name} de <span>Cyberpunk 2077</span></h3>
                             </div>
                 
                             <div className="text-description">

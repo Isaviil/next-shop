@@ -3,45 +3,58 @@
 
         .whats-new{
            padding: 8px;
-           @include mixins.sizes(100%, auto, 1400px); 
+           @include mixins.sizes(100%, auto); 
            @include mixins.flex-prop(space-between, center, column, 30px);
            position: relative;
 
            h2{
             @extend %h-lg-04;
             font-weight: 300;
+            text-align: center;
            }
 
            &-container{
-            background-color: var(--color-08);
-            @include mixins.sizes(100%, 80%);
+            background-color: var(--color-15);
+            @include mixins.sizes(100%, 57vh, null, 600px);
             @include mixins.flex-prop(center, center);
+            min-height: 600px;
+            padding: 0 50px;
 
                 &-img{
-                    @include mixins.sizes(45%, 100%, 546px);
+                    @include mixins.sizes(40%, 100%);
+                    @include mixins.flex-prop(center, center);
+                    background-color: var(--color-16);
                     img{
-                        @extend %fit-cover;
+                        @include mixins.sizes(85%, 85%);
+                        object-fit: contain;
                     }
                 }
 
                 &-text{
-                @include mixins.sizes(55%, 100%, 800px);
+                @include mixins.sizes(55%, 100%);
                 @include mixins.flex-prop(center, center, column, 20px);                
 
                 .text-title{
                     @include mixins.flex-prop(center, center);
 
                     h3{
-                        @extend %h-lg-04;
-                        font-weight: 300;
+                        @extend %h-lg-04;                      
+                        font-family: "Play";
+                        text-align: center;
+
+                        span{
+                            color: var(--color-17);
+                        }
                     }
+
                 }
 
                 .text-description{
                     @include mixins.sizes(80%, auto);
 
                     p{
-                        @extend %p-sm-01;
+                        @extend %p-sm-02;
+                        font-weight: 400;
                     }
                 }
 
@@ -62,7 +75,6 @@
 
 
            @include mixins.respond-to(xlg){
-            min-width: 970px;
 
                 &-container {
 
@@ -79,17 +91,36 @@
 
             @include mixins.respond-to(lg){
                 
-                min-width: 720px;
-                width: 100%;
+                
 
                 h2 {
                     font-size: 2.1em;
                 }
 
                 &-container {
-                    height: 85%;
+                    width: 85%;
+                    height: auto;
+                    min-height: unset;
+                    max-height: unset;
+                    flex-direction: column;
+                    padding: 30px 0px;
+                    gap: 10px;
+
+                    &-img{
+                        width: 95%;
+                        height: 60%;
+                        padding: 45px 0px;
+
+                        img{
+
+                        }
+                }
 
                     &-text {
+                        width: 95%;
+                        height: auto;
+                        
+
                         .text-title {
                             h2 {
                                 font-size: 2.1em;
@@ -97,8 +128,11 @@
                         }
 
                         .text-description {
+                            width: 100%;
+
                             p {
                             font-size: .91em;
+                            text-align: center;
                             }
                         }
 
@@ -125,16 +159,16 @@
                 }
 
                 &-container {
-                    flex-direction: column;
+                    width: 90%;
 
                     &-img {
                         max-width: unset;
-                        width: 100%;
+                        width: 95%;
                     }
 
                     &-text {                    
                         width: 100%;
-                        padding: 18px 0px;
+                        padding: 0px 15px;
 
                         .text-title {
                             h2 {
@@ -166,7 +200,8 @@
                     font-size: 1.6em;
                 }
 
-                &-container {                    
+                &-container {        
+                    width: 100%;            
 
                     &-img {
                         width: 95%;
@@ -176,8 +211,8 @@
                         width: 100%;
 
                         .text-title {
-                            h2 {
-                                font-size: 1.6em;  
+                            h3 {
+                                font-size: 2em;  
                             }
                         }
 
@@ -193,7 +228,7 @@
                             button, a {
                               
                               white-space: nowrap;
-                              max-width: 85px;
+                              max-width: 95px;
                               overflow: hidden;
                               text-overflow: ellipsis;
                               padding: 5px 11px;
