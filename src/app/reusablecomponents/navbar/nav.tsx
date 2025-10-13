@@ -77,7 +77,7 @@ export default function Navbar(){
             "--color-regular-text": theme === "dark"? "rgb(255, 255, 255)" : "black",
             "--color-black": theme === "dark"? "black": "white",
             "--color-01": theme === "dark"? "#131618e7": "#ece5e5ec",
-            "--color-02": theme === "dark"? "#111821": "rgb(228, 228, 228)",
+            "--color-02": theme === "dark"? "#0e131aff": "rgb(228, 228, 228)",
             "--color-03": theme === "dark"? "#d63d00": "#facf59",
             "--color-04": theme === "dark"? "#5c1e07": "#e9bf04",
             "--color-06": theme === "dark"? "rgb(34, 34, 34)": "rgb(204, 204, 204)",

@@ -5,6 +5,7 @@ import Addons from '../reusablecomponents/dlc/addons';
 import Details from '../gameinfo/details';
 import WhatsNew from '../reusablecomponents/whatsnew/newest';
 import Base from '../basegame/basegame';
+import ExtraDescription from '../reusablecomponents/extraDescription/extraDescription';
 
 export default function HomePage(){
 
@@ -24,12 +25,13 @@ export default function HomePage(){
                 <Details/>
             </section>
 
-            <Base/>
+            <Base/>            
 
             <section className="info">
                 <WhatsNew/>
             </section>
-        
+
+            <ExtraDescription/>
             <Hotnow/>
             <Addons/>            
         </main>

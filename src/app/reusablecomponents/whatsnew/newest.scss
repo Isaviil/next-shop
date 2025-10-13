@@ -17,6 +17,7 @@
             background-color: var(--color-15);
             @include mixins.sizes(100%, 57vh, null, 600px);
             @include mixins.flex-prop(center, center);
+            box-shadow: 0 0 60px var(--color-07);
             min-height: 600px;
             padding: 0 50px;
 
@@ -82,7 +83,7 @@
 
                         .text-options {
                             button, a {
-                                padding: 10px 45px;
+                                padding: 10px 35px;
                             }
                         }
                     }
@@ -111,9 +112,6 @@
                         height: 60%;
                         padding: 45px 0px;
 
-                        img{
-
-                        }
                 }
 
                     &-text {

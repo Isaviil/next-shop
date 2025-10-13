@@ -48,6 +48,17 @@
     @include mixins.f-prop(var(--color-regular-text), 1.32em, 350, "Montserrat");
 }
 
+%h-md-04{
+    @include mixins.f-prop(var(--color-regular-text), 1.65em, 500, "Montserrat");
+}
+
+%h-md-05{
+    @include mixins.f-prop(var(--color-regular-text), 1.4em, 500, "Barlow Condensed");
+}
+
+%h-md-06{
+    @include mixins.f-prop(var(--color-regular-text), 1.8em, 600, "Play");
+}
 
 %p-xs-01{
     @include mixins.f-prop(var(--color-regular-text), .85em, 350, "Montserrat");
@@ -73,6 +84,10 @@
     @include mixins.f-prop(var(--color-regular-text), 1em, 450, "Montserrat");
 }
 
+%p-sm-03{
+    @include mixins.f-prop(var(--color-regular-text), .95em, 450, "Montserrat");
+}
+
 
 
 /*buttons*/
@@ -87,11 +102,11 @@
 }
 
 %button-lg-01{
-    padding: 13px 60px;
+    padding: 7px 35px;
     background-color: var(--color-03); 
     border-radius: 25px;
     border: none;
-    @extend %p-sm-02;
+    @extend %p-sm-03;
     cursor: pointer;
     transition: .2s ease-in-out;
 }

@@ -47,29 +47,35 @@ export default function Base(){
             {data?.products.length  && 
             
             <>
-                <h2>Juego base</h2>
-                <div className="base-container">
-                    
-                    <div className="base-container-img">
-                        <img src={data.products[0].imageurl} alt="" />
-                    </div>
+                <h2>Ediciones</h2>
 
-                    <div className="base-container-text">
+                <div className="base-display">
 
-                        <div className="base-container-text-title">
-                            <h2>{data.products[0].name}</h2>
+                    {data.products.map((x, i)=> (
+                        <div className="base-display-container" key={i}>
+
+                            <div className="base-display-container-img">
+                                <img src={x.imageurl} alt="" />
+                            </div>
+
+                            <div className="base-display-container-text">
+
+                                <div className="base-display-container-text-title">
+                                    <h3>{x.name}</h3>
+                                </div>
+
+                                <div className="base-display-container-text-description">
+                                    <p>{x.longdescription}</p>
+                                </div>
+
+                                <div className="base-display-container-text-options">
+                                    <CartButton productId={x.id}/>
+                                </div>
+                            </div>
                         </div>
+                        
+                    ))}
 
-                        <div className="base-container-text-description">
-                            <p>{data.products[0].longdescription}</p>
-                        </div>
-
-                        <div className="base-container-text-options">
-                            <CartButton productId={data.products[0].id}/>
-                            <a href='https://www.youtube.com/watch?v=wKWSBwkCUe0' target='_blank'>Ver trailer</a>
-                        </div>
-
-                    </div>
                 </div>
             </>
             
@@ -77,3 +83,28 @@ export default function Base(){
         </div>
     )
 }
+
+/*
+                    <div className="base-container">
+                        
+                        <div className="base-container-img">
+                            <img src={data.products[0].imageurl} alt="" />
+                        </div>
+
+                        <div className="base-container-text">
+
+                            <div className="base-container-text-title">
+                                <h3>{data.products[0].name}</h3>
+                            </div>
+
+                            <div className="base-container-text-description">
+                                <p>{data.products[0].longdescription}</p>
+                            </div>
+
+                            <div className="base-container-text-options">
+                                <CartButton productId={data.products[0].id}/>
+                            </div>
+
+                        </div>
+                    </div>
+*/

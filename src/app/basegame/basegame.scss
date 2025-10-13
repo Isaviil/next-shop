@@ -3,7 +3,7 @@
 
 
 .base {
-    @include mixins.sizes(80%, auto, 700px); 
+    @include mixins.sizes(100%, auto, 1600px); 
     @include mixins.flex-prop(center, center, column, 30px);
     padding: 200px 8px;
 
@@ -13,37 +13,48 @@
         text-align: center
     }
 
-    &-container{
-        position: relative;
+    &-display{
         @include mixins.sizes(100%, auto);
-        @include mixins.flex-prop(center, center, column, 30px);
+        @include mixins.flex-prop(center, center, null, 50px);
 
-        &-img{
-            @include mixins.sizes(100%, auto); 
+        &-container{
+            position: relative;
+            @include mixins.sizes(60%, auto, 475px);
+            @include mixins.flex-prop(center, center, column, 20px);
 
-            img{
-                @extend %fit-cover;
-            }
-        }
+            &-img{
+                @include mixins.sizes(100%, auto); 
 
-        &-text{
-            @include mixins.sizes(90%, auto);
-            @include mixins.flex-prop(center, center, column, 30px);
-
-
-            &-description{
-
-                p{
-                    @extend %p-sm-01;
-                    text-align: center;
+                img{
+                    @extend %fit-cover;
                 }
             }
 
-            &-options{
-                @include mixins.flex-prop(center, center, null, 30px);
+            &-text{
+                @include mixins.sizes(100%, auto);
+                @include mixins.flex-prop(center, center, column, 15px);
 
-                .btn, a{
-                    @extend %button-lg-01;
+                &-title{
+
+                    h3{
+                        @extend %h-md-04;
+                    }
+                }
+
+                &-description{
+
+                    p{
+                        @extend %p-sm;
+                        text-align: center;
+                    }
+                }
+
+                &-options{
+                    @include mixins.flex-prop(center, center, null, 30px);
+
+                    .btn, a{
+                        @extend %button-lg-01;
+                    }
                 }
             }
         }
@@ -68,24 +79,39 @@
             font-size: 1.8em;
         }
 
-        &-container{
-            width: 100%;
+        &-display{
+            flex-direction: column;
+            width: 85%;
 
-            &-text{
+            &-container{
+                width: 100%;
+                gap: 10px;
+                max-width: unset;
 
-                &-description{
-
-                    p{
-                        font-size: .92em;
-                    }
-                }
-
-                &-options{
+                &-text{
                     gap: 10px;
 
-                    .btn, a{
-                        padding: 8px 15px;
-                        font-size: .95em;
+                    &-title{
+                        
+                        h3{
+                            font-size: 1.5em;
+                        }
+                    }
+
+                    &-description{
+
+                        p{
+                            font-size: .85em;
+                        }
+                    }
+
+                    &-options{
+                        gap: 10px;
+
+                        .btn, a{
+                            padding: 5px 30px;
+                            font-size: .85em;
+                        }
                     }
                 }
             }
@@ -96,31 +122,6 @@
     @include mixins.respond-to(sm){
         padding: 150px 0px;
 
-        &-container{
-
-            &-text{
-
-                &-description{
-
-                    p{
-                        font-size: .92em;
-                    }
-                }
-
-                &-options{
-                   flex-direction: column;
-
-                    .btn, a{
-                              white-space: nowrap;
-                              max-width: 85px;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              padding: 5px 11px;
-                              font-size: .9em;    
-                    }
-                }
-            }
-        }
     }
 
 }
