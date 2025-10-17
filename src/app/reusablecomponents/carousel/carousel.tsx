@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import './carousel.scss';
 import gsap from 'gsap';
 import CarouselVideo from '../carouselVideo/carouselVideo';
@@ -77,13 +77,12 @@ useEffect(() => {
 
 
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
 
     const updateScrollWidth = () => {
         if (carouselRef.current){
             const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
             containerLongitud.current = elements[0].scrollWidth;
-            console.log(containerLongitud.current)
         }
     };            
     
@@ -94,6 +93,10 @@ useEffect(() => {
     return ()=> window.removeEventListener("resize", updateScrollWidth)
 
     }, [])
+
+
+
+
 
     //avoid spam
     const isAnimating = useRef(false);
