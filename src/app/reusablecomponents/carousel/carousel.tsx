@@ -15,7 +15,7 @@ export default function Carousel(){
 
 
     //child container's width & counter
-    let containerLongitud = 0;
+    const [containerWidth, setContainerWidth] = useState(0);
     const currentIndex = useRef(0);
 
 
@@ -80,8 +80,9 @@ useEffect(() => {
 
     const updateScrollWidth = () => {
         if (carouselRef.current){
-            const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
-            containerLongitud = elements[0].scrollWidth;
+            /*const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
+            setContainerWidth(elements[0].scrollWidth); */
+            setContainerWidth(carouselRef.current.children[0].scrollWidth);
         }
     };            
     
@@ -103,12 +104,12 @@ useEffect(() => {
         if (isAnimating.current) return;
         isAnimating.current = true
         currentIndex.current--;
-        gsap.to(carouselRef.current, {x: -(containerLongitud+10)*currentIndex.current,
+        gsap.to(carouselRef.current, {x: -(containerWidth+10)*currentIndex.current,
             onComplete: ()=>{
                 isAnimating.current = false;
                 if (currentIndex.current === -3){
                     currentIndex.current = 2;
-                    gsap.set(carouselRef.current, {x: -(containerLongitud+10)*currentIndex.current })
+                    gsap.set(carouselRef.current, {x: -(containerWidth+10)*currentIndex.current })
                 }
             }
         })        
@@ -120,12 +121,12 @@ useEffect(() => {
         isAnimating.current = true
 
         currentIndex.current++;
-        gsap.to(carouselRef.current, {x: -(containerLongitud+10)*currentIndex.current,
+        gsap.to(carouselRef.current, {x: -(containerWidth+10)*currentIndex.current,
             onComplete: ()=>{   
                 isAnimating.current = false;             
                 if (currentIndex.current === arrayCarousel.length - 2){
                     currentIndex.current = -2;
-                    gsap.set(carouselRef.current, {x: -(containerLongitud+10)*currentIndex.current })
+                    gsap.set(carouselRef.current, {x: -(containerWidth+10)*currentIndex.current })
                 }
             }
         })
