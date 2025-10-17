@@ -6,15 +6,24 @@
     @extend %main-container;
 
     .heroContainer{
-        @include mixins.sizes(100%, 75vh);
+        @include mixins.sizes(100%, 55vh);
         max-height: 1000px;
         min-height: 500px;
         overflow: hidden;
         z-index: 2;
+        position: relative;
 
         img{
             @extend %fit-cover;
             min-height: 500px;
+        }
+
+        &-overlay{
+            top: 0;
+            @include mixins.sizes(100%, 100%);
+            position: absolute;
+            background: linear-gradient(270deg, var(--color-19), var(--color-19), var(--color-18));
+            z-index: 3;
         }
     }
 
@@ -65,9 +74,6 @@
         }
     }
 
-    .info{
-        
-    }
 
     }
 

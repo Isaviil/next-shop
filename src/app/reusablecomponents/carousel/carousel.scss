@@ -1,0 +1,129 @@
+@use '../../styles/mixins';
+@use '../../styles//placeholders';
+
+
+.carousel{
+    position: relative;
+    margin-top: 80px;
+    max-width: 1900px;
+    overflow: hidden;
+
+    h2{
+        @extend %h-lg-04;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 30px;     
+    }
+
+    &-container{
+        @include mixins.sizes(100%, 29vh);
+        @include mixins.flex-prop(center, center, null, 10px);
+        min-height: 280px;
+        //overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &-element{
+            @include mixins.sizes(36%, 100%);        
+            flex-shrink: 0;
+            position: relative;    
+            cursor: pointer; 
+            z-index: 1;
+
+                img{
+                    @extend %fit-cover;
+                }
+
+                &-overlay{
+                    @include mixins.sizes(100%, 100%);
+                    background-color: rgba(0, 0, 0, 0.267);
+                    z-index: 1;
+                    top: 0;
+                    position: absolute;    
+                    transition: .2s ease-in-out;
+                    
+                    &:hover{
+                        opacity: 0;
+                    }
+                }
+        }
+    
+    }
+
+        &-arrows{
+            position: absolute;
+            top: 0;
+            @include mixins.sizes(100%, 100%);
+            @include mixins.flex-prop(space-between, center);
+            padding: 0px 10px;
+
+            .bi{
+                background-color: var(--color-black);
+                color: var(--color-regular-text);
+                font-size: 1.7em;
+                padding: 8px;
+                border-radius: 30%;
+                cursor: pointer;
+                z-index: 2;
+            }
+        }    
+
+    @include mixins.respond-to(xlg){       
+
+        &-container{
+                &-element{
+                    @include mixins.sizes(51%, 100%);
+                }
+            }
+        }
+
+
+        @include mixins.respond-to(lg){
+
+        h2 {
+            font-size: 2.1em;
+        } 
+
+            &-container{
+
+                &-element{
+                    @include mixins.sizes(59%, 100%);
+
+                    img{
+                        object-fit: cover;
+                    }
+                }
+            }
+        }    
+
+        @include mixins.respond-to(md){
+
+            h2 {
+                font-size: 1.8em;
+                margin-bottom: 10px;
+            }            
+
+            &-container{
+                max-width: unset;
+                min-height: 240px;
+
+                &-element{
+                    @include mixins.sizes(85%, 100%);
+                }
+            }
+        }   
+        
+        @include mixins.respond-to(sm){
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            &-container{
+                max-width: unset;
+                &-element{
+                    @include mixins.sizes(100%, 100%);
+                }
+            }
+        }       
+}

@@ -5,7 +5,7 @@
 .base {
     @include mixins.sizes(100%, auto, 1600px); 
     @include mixins.flex-prop(center, center, column, 30px);
-    padding: 200px 8px;
+    padding: 150px 8px 200px;
 
     h2{
         @extend %h-lg-04;
@@ -120,7 +120,7 @@
 
 
     @include mixins.respond-to(sm){
-        padding: 150px 0px;
+        padding: 100px 0px;
 
     }
 

@@ -6,6 +6,7 @@ import Details from '../gameinfo/details';
 import WhatsNew from '../reusablecomponents/whatsnew/newest';
 import Base from '../basegame/basegame';
 import ExtraDescription from '../reusablecomponents/extraDescription/extraDescription';
+import Carousel from '../reusablecomponents/carousel/carousel';
 
 export default function HomePage(){
 
@@ -14,6 +15,10 @@ export default function HomePage(){
         <main className="mainContainer">
             <section className="heroContainer">
                 <img src="/images/strive/full/Strive.png" alt="" />
+
+                <div className="heroContainer-overlay">
+                    
+                </div>
             </section>
 
             <section className="details">
@@ -25,6 +30,7 @@ export default function HomePage(){
                 <Details/>
             </section>
 
+            <Carousel/>
             <Base/>            
 
             <section className="info">
