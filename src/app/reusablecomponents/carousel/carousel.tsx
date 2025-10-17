@@ -17,13 +17,13 @@ export default function Carousel(){
     //child container's width & counter
     const containerLongitud = useRef(0);
     const currentIndex = useRef(0);
-    
-    useEffect(()=>{
 
     const updateScrollWidth = () => {
         containerLongitud.current = gsap.utils.toArray<HTMLElement>(".carousel-container-element")[0].scrollWidth;
     }
-
+    
+    useEffect(()=>{
+        
     updateScrollWidth();
     window.addEventListener("resize", updateScrollWidth)
 
