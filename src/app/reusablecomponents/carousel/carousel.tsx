@@ -30,7 +30,6 @@ export default function Carousel(){
 
 
 
-
     const arrayCarousel = [
         {
             thumbnail: "/images/strive/thumbnails/GGSTThumbnailTwo.png",
@@ -79,13 +78,11 @@ useEffect(() => {
         containerLongitud.current = elements[0].scrollWidth;
         }
     };
-    
-    updateScrollWidth();
         
-    window.addEventListener("resize", updateScrollWidth)
+    requestAnimationFrame(() => updateScrollWidth());
+    window.addEventListener("resize", updateScrollWidth);
 
     return ()=> window.removeEventListener("resize", updateScrollWidth)
-
 
 }, []);
 
@@ -113,7 +110,6 @@ useEffect(() => {
 
     //moving right
     const toRight = () => {
-        console.log(containerLongitud.current);
         if (isAnimating.current) return;
         isAnimating.current = true
 
