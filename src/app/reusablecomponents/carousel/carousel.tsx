@@ -19,7 +19,6 @@ export default function Carousel(){
     const currentIndex = useRef(0);
 
 
-
     //state to trigger the modal
     type displayVideoType = {
         url: string,
@@ -27,6 +26,7 @@ export default function Carousel(){
     }
 
     const [displayVideo, setDisplayVideo] = useState<displayVideoType>({url: "", showVideo: "notShow"});
+
 
 
 
@@ -55,36 +55,40 @@ export default function Carousel(){
     ]
 
 
-    
-useEffect(() => {
+    useEffect(()=>{
+
+    if (!carouselRef.current) return;
+
     const children = carouselRef.current?.children;
    
-    if (children){
-    const first = children[0]?.cloneNode(true);
-    const second = children[1]?.cloneNode(true);
-    const last = children[children.length - 1]?.cloneNode(true);
-    const secondLast = children[children.length - 2]?.cloneNode(true);
+    if (children.length>0){
+        const first = children[0]?.cloneNode(true);
+        const second = children[1]?.cloneNode(true);
+        const last = children[children.length - 1]?.cloneNode(true);
+        const secondLast = children[children.length - 2]?.cloneNode(true);
 
-    if (first) carouselRef.current?.append(first);
-    if (second) carouselRef.current?.append(second);
-    if (last) carouselRef.current?.prepend(last);
-    if (secondLast) carouselRef.current?.prepend(secondLast);
-
-    }
-
+        if (first) carouselRef.current?.append(first);
+        if (second) carouselRef.current?.append(second);
+        if (last) carouselRef.current?.prepend(last);
+        if (secondLast) carouselRef.current?.prepend(secondLast);
+    }  
+    
     const updateScrollWidth = () => {
         const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
         if (elements.length > 0) {
         containerLongitud.current = elements[0].scrollWidth;
         }
-    };
+    };    
+    
+    updateScrollWidth();
         
-    requestAnimationFrame(() => updateScrollWidth());
-    window.addEventListener("resize", updateScrollWidth);
+    window.addEventListener("resize", updateScrollWidth)
 
     return ()=> window.removeEventListener("resize", updateScrollWidth)
 
-}, []);
+    }, [])
+
+    
 
     //avoid spam
     const isAnimating = useRef(false);
@@ -110,6 +114,7 @@ useEffect(() => {
 
     //moving right
     const toRight = () => {
+        console.log(containerLongitud.current);
         if (isAnimating.current) return;
         isAnimating.current = true
 
