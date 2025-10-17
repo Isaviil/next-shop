@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useRef, useLayoutEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './carousel.scss';
 import gsap from 'gsap';
 import CarouselVideo from '../carouselVideo/carouselVideo';
@@ -16,7 +16,7 @@ export default function Carousel(){
 
     //child container's width & counter
     const containerLongitud = useRef(0);
-    const currentIndex = useRef(0);
+    let currentIndex = 0;
 
 
     //state to trigger the modal
@@ -58,7 +58,6 @@ export default function Carousel(){
 //Cloning + loop
 useEffect(() => {
     const children = carouselRef.current?.children;
-    console.log(children?.length)
    
     if (children){
         const first = children[0]?.cloneNode(true);
@@ -77,7 +76,7 @@ useEffect(() => {
 
 
 
-    useLayoutEffect(()=>{
+    useEffect(()=>{
 
     const updateScrollWidth = () => {
         if (carouselRef.current){
@@ -94,10 +93,6 @@ useEffect(() => {
 
     }, [])
 
-
-
-
-
     //avoid spam
     const isAnimating = useRef(false);
 
@@ -107,13 +102,13 @@ useEffect(() => {
 
         if (isAnimating.current) return;
         isAnimating.current = true
-        currentIndex.current--;
-        gsap.to(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex.current,
+        currentIndex--;
+        gsap.to(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex,
             onComplete: ()=>{
                 isAnimating.current = false;
-                if (currentIndex.current === -3){
-                    currentIndex.current = 2;
-                    gsap.set(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex.current })
+                if (currentIndex === -3){
+                    currentIndex = 2;
+                    gsap.set(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex })
                 }
             }
         })        
@@ -124,13 +119,13 @@ useEffect(() => {
         if (isAnimating.current) return;
         isAnimating.current = true
 
-        currentIndex.current++;
-        gsap.to(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex.current,
+        currentIndex++;
+        gsap.to(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex,
             onComplete: ()=>{   
                 isAnimating.current = false;             
-                if (currentIndex.current === arrayCarousel.length - 2){
-                    currentIndex.current = -2;
-                    gsap.set(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex.current })
+                if (currentIndex === arrayCarousel.length - 2){
+                    currentIndex = -2;
+                    gsap.set(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex })
                 }
             }
         })
