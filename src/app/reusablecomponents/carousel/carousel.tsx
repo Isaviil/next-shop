@@ -86,7 +86,25 @@ useEffect(() => {
         }
     };            
     
-    updateScrollWidth();
+    // Check if all images inside carousel have loaded
+    const images = carouselRef.current?.querySelectorAll("img");
+    if (images) {
+        let loadedCount = 0;
+        images.forEach((img) => {
+        if (img.complete) {
+            loadedCount++;
+        } else {
+            img.addEventListener("load", () => {
+            loadedCount++;
+            if (loadedCount === images.length) {
+                updateScrollWidth();
+            }
+            });
+        }
+        });
+        
+        if (loadedCount === images.length) updateScrollWidth();
+    }
         
     window.addEventListener("resize", updateScrollWidth)
 
