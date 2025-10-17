@@ -19,23 +19,6 @@ export default function Carousel(){
     const currentIndex = useRef(0);
 
 
-    useEffect(()=>{
-
-    const updateScrollWidth = () => {
-        const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
-        if (elements.length > 0) {
-        containerLongitud.current = elements[0].scrollWidth;
-        }
-    };
-    
-    updateScrollWidth();
-        
-    window.addEventListener("resize", updateScrollWidth)
-
-    return ()=> window.removeEventListener("resize", updateScrollWidth)
-
-    }, [])
-
 
     //state to trigger the modal
     type displayVideoType = {
@@ -73,7 +56,6 @@ export default function Carousel(){
     ]
 
 
-
     
 useEffect(() => {
     const children = carouselRef.current?.children;
@@ -90,6 +72,19 @@ useEffect(() => {
     if (secondLast) carouselRef.current?.prepend(secondLast);
 
     }
+
+    const updateScrollWidth = () => {
+        const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
+        if (elements.length > 0) {
+        containerLongitud.current = elements[0].scrollWidth;
+        }
+    };
+    
+    updateScrollWidth();
+        
+    window.addEventListener("resize", updateScrollWidth)
+
+    return ()=> window.removeEventListener("resize", updateScrollWidth)
 
 
 }, []);
@@ -118,7 +113,7 @@ useEffect(() => {
 
     //moving right
     const toRight = () => {
-
+        console.log(containerLongitud.current);
         if (isAnimating.current) return;
         isAnimating.current = true
 
