@@ -55,13 +55,12 @@ export default function Carousel(){
     ]
 
 
-    useEffect(()=>{
-
-    if (!carouselRef.current) return;
-
+//Cloning + loop
+useEffect(() => {
     const children = carouselRef.current?.children;
+    console.log(children?.length)
    
-    if (children.length>0){
+    if (children){
         const first = children[0]?.cloneNode(true);
         const second = children[1]?.cloneNode(true);
         const last = children[children.length - 1]?.cloneNode(true);
@@ -71,14 +70,22 @@ export default function Carousel(){
         if (second) carouselRef.current?.append(second);
         if (last) carouselRef.current?.prepend(last);
         if (secondLast) carouselRef.current?.prepend(secondLast);
-    }  
-    
+    }
+
+}, []);
+
+
+
+
+    useEffect(()=>{
+
     const updateScrollWidth = () => {
-        const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
-        if (elements.length > 0) {
-        containerLongitud.current = elements[0].scrollWidth;
+        if (carouselRef.current){
+            const elements = gsap.utils.toArray<HTMLElement>(".carousel-container-element");
+            containerLongitud.current = elements[0].scrollWidth;
+            console.log(containerLongitud.current)
         }
-    };    
+    };            
     
     updateScrollWidth();
         
@@ -87,8 +94,6 @@ export default function Carousel(){
     return ()=> window.removeEventListener("resize", updateScrollWidth)
 
     }, [])
-
-    
 
     //avoid spam
     const isAnimating = useRef(false);
@@ -99,7 +104,6 @@ export default function Carousel(){
 
         if (isAnimating.current) return;
         isAnimating.current = true
-
         currentIndex.current--;
         gsap.to(carouselRef.current, {x: -(containerLongitud.current+10)*currentIndex.current,
             onComplete: ()=>{
@@ -114,7 +118,6 @@ export default function Carousel(){
 
     //moving right
     const toRight = () => {
-        console.log(containerLongitud.current);
         if (isAnimating.current) return;
         isAnimating.current = true
 
