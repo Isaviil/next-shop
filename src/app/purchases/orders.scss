@@ -2,10 +2,6 @@
 @use '../styles/placeholders';
 
 
-
-
-
-
 .orders{
     @extend %main-container;
     gap: 20px;
@@ -23,6 +19,17 @@
             text-align: center;
         }
 
+    &-buttons{
+        
+        button{
+            background-color: var(--color-04);
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            @extend %h-small;
+            border-radius: 8px;
+        }
+    }
 
     &-container{
         //padding: 200px 0px;        
