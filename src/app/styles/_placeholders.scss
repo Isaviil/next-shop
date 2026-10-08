@@ -21,79 +21,79 @@
 
 /*words*/
 %h-small{
-    @include mixins.f-prop(var(--color-regular-text), 1.1em, 300, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 1.1em, 300, var(--font-montserrat));
 }
 
 %h-lg-01{
-    @include mixins.f-prop(var(--color-regular-text), 1.68em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 1.68em, 350, var(--font-montserrat));
 }
 
 %h-lg-02{
-    @include mixins.f-prop(var(--color-regular-text), 1.88em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 1.88em, 350, var(--font-montserrat));
 }
 
 %h-lg-03{
-    @include mixins.f-prop(var(--color-regular-text), 2.18em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 2.18em, 350, var(--font-montserrat));
 }
 
 %h-lg-04{
-    @include mixins.f-prop(var(--color-regular-text), 2.48em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 2.48em, 350, var(--font-montserrat));
 }
 
 %h-lg-05{
-    @include mixins.f-prop(var(--color-regular-text), 4.2em, 500, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 4.2em, 500, var(--font-montserrat));
 }
 
 %h-lg-06{
-    @include mixins.f-prop(var(--color-regular-text), 2.5em, 500, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 2.5em, 500, var(--font-montserrat));
 }
 
 %h-md-02{
-    @include mixins.f-prop(var(--color-regular-text), 1.45em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 1.45em, 350, var(--font-montserrat));
 }
 
 %h-md-03{
-    @include mixins.f-prop(var(--color-regular-text), 1.32em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 1.32em, 350, var(--font-montserrat));
 }
 
 %h-md-04{
-    @include mixins.f-prop(var(--color-regular-text), 1.65em, 500, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 1.65em, 500, var(--font-montserrat));
 }
 
 %h-md-05{
-    @include mixins.f-prop(var(--color-regular-text), 1.4em, 500, "Barlow Condensed");
+    @include mixins.f-prop(var(--color-regular-text), 1.4em, 500, var(--font-barlow));
 }
 
 %h-md-06{
-    @include mixins.f-prop(var(--color-regular-text), 1.8em, 600, "Play");
+    @include mixins.f-prop(var(--color-regular-text), 1.8em, 600, var(--font-play));
 }
 
 %p-xs-01{
-    @include mixins.f-prop(var(--color-regular-text), .85em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), .85em, 350, var(--font-montserrat));
 }
 
 %p-xs-02{
-    @include mixins.f-prop(var(--color-regular-text), .75em, 320, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), .75em, 320, var(--font-montserrat));
 }
 
 %p-xs-03{
-    @include mixins.f-prop(var(--color-regular-text), .8em, 400, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), .8em, 400, var(--font-montserrat));
 }
 
 %p-sm{
-    @include mixins.f-prop(var(--color-regular-text), .9em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), .9em, 350, var(--font-montserrat));
 }
 
 %p-sm-01{
-    @include mixins.f-prop(var(--color-regular-text), .95em, 350, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), .95em, 350, var(--font-montserrat));
 }
 
 %p-sm-02{
-    @include mixins.f-prop(var(--color-regular-text), 1em, 450, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), 1em, 450, var(--font-montserrat));
 }
 
 %p-sm-03{
-    @include mixins.f-prop(var(--color-regular-text), .95em, 450, "Montserrat");
+    @include mixins.f-prop(var(--color-regular-text), .95em, 450, var(--font-montserrat));
 }
 
 
@@ -138,4 +138,3 @@
     cursor: pointer;
     transition: .2s ease-in-out;
 }
-
