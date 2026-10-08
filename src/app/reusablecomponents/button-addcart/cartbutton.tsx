@@ -17,7 +17,7 @@ import useCartOrderContext from "@/app/context/cart-order/cartOrderContext";
 
 //*Specify the product you'll send to the backend 
 
-export default function CartButton({productId, warning, error, message}: CartButtonProps){
+export default function CartButton({productId,}: CartButtonProps){
 
 
     const queryClient = useQueryClient();

@@ -1,5 +1,5 @@
 'use client';
-import Register from '@/app/register/page';
+import Register from '@/app/register/register';
 import './modallogin.scss';
 import useModalContext from '@/app/context/modal/modalContext';
 import gsap from 'gsap';
