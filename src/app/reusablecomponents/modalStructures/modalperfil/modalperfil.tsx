@@ -7,7 +7,7 @@ import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useRouter } from 'next/navigation';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import Register from '@/app/register/register';
+import Register from '@/app/reusablecomponents/register/register';
 
 
 export default function ModalPerfil(){
