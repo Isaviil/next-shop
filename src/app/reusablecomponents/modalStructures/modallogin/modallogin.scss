@@ -84,6 +84,13 @@
             text-align: center;
             p{
                 @extend %p-xs-01;
+
+                button{
+                    color: var(--color-10);
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
             }
 
             &:hover{

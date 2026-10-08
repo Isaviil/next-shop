@@ -1,0 +1,203 @@
+@use '../styles/mixins';
+@use '../styles/placeholders';
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-06) inset !important;
+  -webkit-text-fill-color: var(--color-regular-text) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.register{
+    @include mixins.sizes(100%, 100vh);
+    @extend %main-container;
+    position: absolute;
+    background-color: var(--color-01);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    min-height: 716px;
+
+    nav{
+        position: absolute;
+        top: 0;
+    }
+
+    &-container{
+        @include mixins.sizes(100%, 50%, 1040px, 570px);
+        @include mixins.flex-prop(center, center);
+        background: linear-gradient(180deg, var(--color-19), var(--color-08));
+        box-shadow: 0 0 30px var(--color-07);
+        border-radius: 15px;
+        
+        min-height: 524px;
+
+        &-text{
+            @include mixins.sizes(40%, 100%);
+            @include mixins.flex-prop(center, center);
+            position: relative;
+            padding: 10px;
+
+            h2{
+                position: absolute;
+                @extend %h-md-03;
+                font-weight: 600;
+                top: 10px;
+                left: 10px;                               
+            }
+
+            h3{
+                @extend %h-lg-05;
+            }
+        }
+
+        &-form{
+            @include mixins.sizes(100%, 100%);
+            @include mixins.flex-prop(center, center, column, 10px);
+            position: relative;
+
+            h2{
+                @extend %h-lg-06;
+            }
+
+            form{
+                @include mixins.sizes(50%, auto);
+                @include mixins.flex-prop(center, center, column, 15px);
+
+                .form-element{
+                    @include mixins.sizes(100%, auto);
+                    @include mixins.flex-prop(center, center, column, 7px);
+
+                    label{
+                        @extend %p-sm;
+                        font-weight: 600;
+                    }
+
+                    input{
+                        @extend %p-xs-01;
+                        background-color: var(--color-06);
+                        border: solid 1px var(--color-07);
+                        padding: 8px 5px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+
+                .buttons{
+                    @include mixins.flex-prop(center, center, null, 9px);
+                    padding-top: 10px;
+
+                    button{
+                        @extend %p-sm;
+                        padding: 4px 7px;
+                        border: none;
+                        border-radius: 4px;
+                        background-color: var(--color-14);
+                        cursor: pointer;
+                        transition: .3s ease-in-out;
+
+                        &:hover{
+                            background-color: var(--color-18);
+                        }
+                    }
+                }
+            }
+
+            .error-msg{
+                @extend %p-sm;
+                position: absolute;
+                color: var(--color-10);
+                font-weight: 600;
+                bottom: 0;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+        }
+    }
+
+
+    @include mixins.respond-to(lg){
+
+        min-height: 586px;
+        
+        &-container{
+            width: 100%;
+            height: 46%;
+           
+            min-height: 436px;
+
+            &-text{
+                h2{
+                    font-size: 1.25em;
+                }
+
+                h3{
+                    font-size: 3.3em;
+                }
+            }
+
+            &-form{
+                h2{
+                    font-size: 2.2em;
+                }
+
+                form{
+
+                    .form-element{
+
+                        label{
+                            font-size: .85em;
+                        }
+
+                        input{
+                            padding: 6px 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include mixins.respond-to(md){
+
+        &-container{
+            max-width: 350px;
+            min-width: unset;
+            height: 38%;
+
+            &-text{
+                display: none;
+            }
+
+            &-form{
+                border-left: none;
+                width: 85%;
+                max-width: 240px;
+
+                h2{
+                    font-size: 2em;
+                }
+
+                form{
+                    width: 100%;
+
+                    .form-element{
+                        gap: 9px;
+
+                        label{
+                            font-size: 0.8em;
+                            text-align: center;
+                        }
+
+                        input{
+                            padding: 5px 4px;
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

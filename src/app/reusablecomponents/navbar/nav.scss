@@ -58,7 +58,7 @@ nav{
         }
 
         &-img{
-            @include mixins.sizes(auto, 100%, 90px, 100%);
+            @include mixins.sizes(auto, 100%, 25px, 25px);
             border-radius: 50%;
             overflow: hidden;
             cursor: pointer;

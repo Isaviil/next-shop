@@ -3,11 +3,11 @@ import { useSession } from 'next-auth/react';
 import './modalperfil.scss';
 import useModalContext from '@/app/context/modal/modalContext';
 import { signOut } from "next-auth/react";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
-//import IsAnimating from '@/app/context/is-animating/animatingContext';
 import { useRouter } from 'next/navigation';
-import { useQueryClient } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import Register from '@/app/register/page';
 
 
 export default function ModalPerfil(){
@@ -19,23 +19,38 @@ export default function ModalPerfil(){
     //*Retrieve the session and context
     const {data: session} = useSession();
     const {modal, displayModal} = useModalContext();
+    const [isEdit, setIsEdit] = useState<boolean>(false)
     //const {isAnimatingContext, changeisAnimating} = IsAnimating();
 
     //*Ref
     const perfilRef = useRef<HTMLDivElement>(null);
     const isAnimating = useRef(false);
 
+    //*
+    const { data: user } = useQuery({
+    queryKey: ["currentUser"],
+    queryFn: async () => {
+        const res = await fetch("/api/usuarios");
+        if (!res.ok) throw new Error("Failed to fetch user");
+        return res.json();
+        }
+    });
 
     return (
         <div className="modal-perfil" ref={perfilRef}>
+
+                {
+                    isEdit && <Register changeState = {setIsEdit} isEdit={isEdit}/>
+                }   
+            
             <div className="modal-perfil-usuario">
                 <div className="modal-perfil-usuario-img">
                     <img src="/images/others/Mii.png" alt="" />
                 </div>
 
                 <div className="modal-perfil-usuario-text">
-                    {session && (<h2>{session?.user?.name?.split(" ")[0]}</h2>)}
-                    {session && (<p>{session?.user?.email}</p>)}
+                    {session && (<h2>{user?.name?.split(" ")[0]}</h2>)}
+                    {session && (<p>{user?.email}</p>)}
                 </div>
             </div>
 
@@ -66,6 +81,13 @@ export default function ModalPerfil(){
                 }}> 
                     Regresar 
                 </button>
+
+                {/* <button disabled onClick={()=> {
+                    setIsEdit(true);
+                }}>
+                    Editar
+                </button>
+ */}
                 <button onClick={()=> {
 
                     if (isAnimating.current) return;

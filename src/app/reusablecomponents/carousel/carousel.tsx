@@ -55,23 +55,23 @@ export default function Carousel(){
     ]
 
 
-//Cloning + loop
-useEffect(() => {
-    const children = carouselRef.current?.children;
-   
-    if (children){
-        const first = children[0]?.cloneNode(true);
-        const second = children[1]?.cloneNode(true);
-        const last = children[children.length - 1]?.cloneNode(true);
-        const secondLast = children[children.length - 2]?.cloneNode(true);
+    //Cloning + loop
+    useEffect(() => {
+        const children = carouselRef.current?.children;
+    
+        if (children){
+            const first = children[0]?.cloneNode(true);
+            const second = children[1]?.cloneNode(true);
+            const last = children[children.length - 1]?.cloneNode(true);
+            const secondLast = children[children.length - 2]?.cloneNode(true);
 
-        if (first) carouselRef.current?.append(first);
-        if (second) carouselRef.current?.append(second);
-        if (last) carouselRef.current?.prepend(last);
-        if (secondLast) carouselRef.current?.prepend(secondLast);
-    }
+            if (first) carouselRef.current?.append(first);
+            if (second) carouselRef.current?.append(second);
+            if (last) carouselRef.current?.prepend(last);
+            if (secondLast) carouselRef.current?.prepend(secondLast);
+        }
 
-}, []);
+    }, []);
 
 
 

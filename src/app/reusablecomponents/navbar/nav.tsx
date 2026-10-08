@@ -22,6 +22,16 @@ export default function Navbar(){
     const {changeisAnimating} = IsAnimating();
 
     
+    //api
+    //*
+    const { data: user } = useQuery({
+    queryKey: ["currentUser"],
+    queryFn: async () => {
+        const res = await fetch("/api/usuarios");
+        if (!res.ok) throw new Error("Failed to fetch user");
+        return res.json();
+        }
+    });
 
     const router = useRouter();
 
@@ -125,7 +135,7 @@ export default function Navbar(){
                         <p className='cart-number'>{data?.cart && data.cart.length} </p>
                     </div>
 
-                    <p onClick={()=> changeisAnimating("showprofile")}>{session?.user?.name?.split(" ")[0]}</p>
+                    <p onClick={()=> changeisAnimating("showprofile")}>{user?.name?.split(" ")[0]}</p>
                     
                     <div className="user-data-img" onClick={()=> changeisAnimating("showprofile")}>
                         <img src="/images/others/Mii.png" alt="Gata" />

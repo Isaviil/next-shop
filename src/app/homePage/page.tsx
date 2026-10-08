@@ -1,11 +1,46 @@
-import HomePage from "./homepage";
+'use client';
+import './homepage.scss';
+import Hotnow from "../reusablecomponents/hot/hotitems";
+import Addons from '../reusablecomponents/dlc/addons';
+import Details from '../gameinfo/page';
+import WhatsNew from '../reusablecomponents/whatsnew/newest';
+import Base from '../basegame/page';
+import ExtraDescription from '../reusablecomponents/extraDescription/extraDescription';
+import Carousel from '../reusablecomponents/carousel/carousel';
+
+export default function HomePage(){
 
 
-//TODO Change this to async once we add session
-export default function Page(){
     return (
-       <>
-       <HomePage/>
-       </>
+        <main className="mainContainer">
+            <section className="heroContainer">
+                <img src="/images/strive/full/Strive.png" alt="" />
+
+                <div className="heroContainer-overlay">
+                    
+                </div>
+            </section>
+
+            <section className="details">
+               
+               <div className='gameInfoRestriction'>
+                
+               </div>
+                
+                <Details/>
+            </section>
+
+            <Carousel/>
+            <Base/>            
+
+            <section className="info">
+                <WhatsNew/>
+            </section>
+
+            <ExtraDescription/>
+            <Hotnow/>
+            <Addons/>            
+        </main>
     )
+
 }
